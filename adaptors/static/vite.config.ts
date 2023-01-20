@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdaptor({
-        origin: 'https://saxxie.dev',
+        origin: 'https://saxxie.dev/Hanzle/',
       }),
     ],
   };

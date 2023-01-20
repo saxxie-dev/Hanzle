@@ -26,6 +26,7 @@ export default component$(() => {
         value={state.number}
         max={50}
         onInput$={(ev) => {
+          console.log("YAYAYAYA" + ev);
           state.number = (ev.target as HTMLInputElement).valueAsNumber;
         }}
       />
