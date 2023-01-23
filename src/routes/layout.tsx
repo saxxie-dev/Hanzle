@@ -1,9 +1,8 @@
 import { component$, Slot, useClientEffect$, useStore } from '@builder.io/qwik';
 import Header from '../components/header/header';
-import * as rawData$ from '../candidates.json';
 
 export default component$(() => {
-  const data$: Record<string, string> = (rawData$ as any).default;
+  const data$: Record<string, string> = {};//(rawData$ as any).default;
   const store = useStore({
     char: "",
   })
