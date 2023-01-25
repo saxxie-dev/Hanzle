@@ -1,0 +1,32 @@
+div {
+  display: flex;
+  box-sizing: border-box;
+}
+
+span {
+  transform-origin: top left;
+}
+
+div.Col {
+  flex-direction: column;
+}
+
+div.Row {
+  flex-direction: row;
+}
+
+.Idk {
+  background-color: transparent;
+}
+
+.Nope {
+  background-color: #787c7e;
+}
+
+.Partial {
+  background-color: #c9b458;
+}
+
+.Full {
+  background-color: #6aaa64;
+}

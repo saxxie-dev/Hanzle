@@ -5,7 +5,7 @@ const parseIDS_ = (input: string): [IDS.Expr<string>, string] => {
   if (h1) {
     const [arg1, rem] = parseIDS_(input.slice(1));
     return [
-      [h1, arg1],
+      { type: h1, args: [arg1] },
       rem,
     ];
   }
@@ -15,7 +15,7 @@ const parseIDS_ = (input: string): [IDS.Expr<string>, string] => {
     const [arg1, rem1] = parseIDS_(input.slice(1));
     const [arg2, rem] = parseIDS_(rem1);
     return [
-      [h2, arg1, arg2],
+      { type: h2, args: [arg1, arg2] },
       rem,
     ];
   }
@@ -27,12 +27,12 @@ const parseIDS_ = (input: string): [IDS.Expr<string>, string] => {
     const [arg3, rem] = parseIDS_(rem2);
 
     return [
-      [h3, arg1, arg2, arg3],
+      { type: h3, args: [arg1, arg2, arg3] },
       rem,
     ];
   }
-
-  return matchUnicodeCons(input);
+  const [nxt, rem] = matchUnicodeCons(input);
+  return [{ type: 'Leaf', val: nxt }, rem];
 }
 
 export const parseIDS = (input: string): IDS.Expr<string> => {

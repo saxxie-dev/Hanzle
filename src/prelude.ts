@@ -8,3 +8,5 @@ export const recordMap = <A extends string | number | symbol, B, C>(record: Reco
   Object.keys(record).forEach(a => ret[a] = fn(record[a as A]));
   return ret as Record<A, C>;
 };
+
+export type CleanOptional<K extends string, N> = N extends undefined ? { [key in K]?: N } : { [key in K]: N };
