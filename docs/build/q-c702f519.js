@@ -1,4 +1,4 @@
-import{J as l,T as d,_ as h,a as r,z as c,E as m}from"./q-f739609d.js";import{G as n}from"./q-3fbfbc11.js";const f=`div{display:flex;box-sizing:border-box;font-family:"Noto Serif SC";border-radius:1rem}span{transform-origin:top left;margin-top:-.07em}div.Col{flex-direction:column}div.Row{flex-direction:row}.Idk{background-color:transparent}.absent{background-color:#787c7e}.present{background-color:#c9b458}.correct{background-color:#6aaa64}
+import{J as l,T as d,_ as h,a as r,z as c,E as m}from"./q-acba68ae.js";import{G as n}from"./q-476ae812.js";const f=`div{display:flex;box-sizing:border-box;font-family:"Noto Serif SC";border-radius:1rem}span{transform-origin:top left;margin-top:-.07em}div.Col{flex-direction:column}div.Row{flex-direction:row}.Idk{background-color:transparent}.absent{background-color:#787c7e}.present{background-color:#c9b458}.correct{background-color:#6aaa64}
 `,u=f,y=e=>{l(d(()=>h(()=>Promise.resolve().then(()=>_),void 0),"s_C3ThiTpEF2I"));const{w:s,h:t}=e.char.note.position,a=`width: ${s}rem; 
     height: ${t}rem;`,i=`
     line-height:${t}rem;

@@ -1,4 +1,4 @@
-import { component$, useStore, useStylesScoped$, $ } from "@builder.io/qwik";
+import { component$, useStore, useStylesScoped$, $, useClientEffect$ } from "@builder.io/qwik";
 import { GameState, generateFreshGameState } from "~/logic/GameState";
 import { generateRenderableIDSGuess, Position } from "~/logic/Scoring";
 import { Guess } from "../guess/Guess";
@@ -12,7 +12,11 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const store = useStore<GameState>(generateFreshGameState());
-  console.log(JSON.stringify(store));
+  useClientEffect$(() => {
+    const { secret, secretKnowledge } = generateFreshGameState();
+    store.secret = secret;
+    store.secretKnowledge = secretKnowledge;
+  });
 
   const submitGuess = () => {
     const { pendingGuess } = store;
