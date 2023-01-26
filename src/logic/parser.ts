@@ -1,4 +1,4 @@
-import { IDS } from './types';
+import { IDS } from './IDS';
 
 const parseIDS_ = (input: string): [IDS.Expr<string>, string] => {
   const h1 = headHas(input, IDS.Combo1_enumeration);

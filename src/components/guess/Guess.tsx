@@ -1,16 +1,15 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Queries } from "~/logic/queries";
-import { IDS } from "~/logic/types";
+import { RenderableIDSGuess } from "~/logic/Scoring";
 import styles from './Guess.css?inline';
 
 
 export type GuessProps = {
-  char: IDS.Expr<[Queries.LeafMatch, string], Queries.Position>
+  char: RenderableIDSGuess
 }
 
 export const Guess = component$((props: GuessProps) => {
   useStylesScoped$(styles);
-  const { x, y, w, h } = props.char.note;
+  const { w, h } = props.char.note.position;
   const dimStyle = `width: ${w}rem; 
     height: ${h}rem;`
   const textStyle = `
@@ -20,16 +19,16 @@ export const Guess = component$((props: GuessProps) => {
 
   switch (props.char.type) {
     case 'Leaf':
-      return <div style={dimStyle} class={props.char.val[0]}><span style={textStyle}>{props.char.val[1]}</span></div>;
+      return <div style={dimStyle} class={props.char.val.color}><span style={textStyle}>{props.char.val.char}</span></div>;
     case '⿰':
     case '⿲':
       return <div class='Row' style={dimStyle}>
-        {props.char.args.map(x => <Guess char={x} />)}
+        {props.char.args.map(x => <Guess char={x} key={JSON.stringify(x.note.position.y)} />)}
       </div>;
     case '⿱':
     case '⿳':
       return <div class='Col' style={dimStyle}>
-        {props.char.args.map(x => <Guess char={x} />)}
+        {props.char.args.map(x => <Guess char={x} key={x.note.position.x} />)}
       </div>;
   }
 });

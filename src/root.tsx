@@ -18,6 +18,8 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" />
         <RouterHead />
       </head>
       <body lang="en">

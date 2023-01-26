@@ -1,10 +1,13 @@
 div {
   display: flex;
   box-sizing: border-box;
+  font-family: 'Noto Serif SC';
+  border-radius: 1rem;
 }
 
 span {
   transform-origin: top left;
+  margin-top: -0.07em;
 }
 
 div.Col {
@@ -19,14 +22,14 @@ div.Row {
   background-color: transparent;
 }
 
-.Nope {
+.absent {
   background-color: #787c7e;
 }
 
-.Partial {
+.present {
   background-color: #c9b458;
 }
 
-.Full {
+.correct {
   background-color: #6aaa64;
 }

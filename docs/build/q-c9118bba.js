@@ -1,0 +1,6 @@
+import{J as l,T as d,_ as h,a as r,z as c,E as m}from"./q-f739609d.js";import{G as n}from"./q-3fbfbc11.js";const f=`div{display:flex;box-sizing:border-box;font-family:"Noto Serif SC";border-radius:1rem}span{transform-origin:top left;margin-top:-.07em}div.Col{flex-direction:column}div.Row{flex-direction:row}.Idk{background-color:transparent}.absent{background-color:#787c7e}.present{background-color:#c9b458}.correct{background-color:#6aaa64}
+`,u=f,y=e=>{l(d(()=>h(()=>Promise.resolve().then(()=>_),void 0),"s_C3ThiTpEF2I"));const{w:s,h:t}=e.char.note.position,a=`width: ${s}rem; 
+    height: ${t}rem;`,i=`
+    line-height:${t}rem;
+    font-size: ${t}rem;
+    transform: scaleX(${s/t});`;switch(e.char.type){case"Leaf":return r("div",{style:a,get class(){return e.char.val.color},children:r("span",{style:i,children:c(e.char.val,"char")}),[m]:{class:c(e.char.val,"color")}});case"⿰":case"⿲":return r("div",{class:"Row",style:a,children:e.char.args.map(o=>r(n,{char:o},JSON.stringify(o.note.position.y)))});case"⿱":case"⿳":return r("div",{class:"Col",style:a,children:e.char.args.map(o=>r(n,{char:o},o.note.position.x))})}},_=Object.freeze(Object.defineProperty({__proto__:null,s_C3ThiTpEF2I:u,s_TbFW62RyZ54:y},Symbol.toStringTag,{value:"Module"}));export{u as s_C3ThiTpEF2I,y as s_TbFW62RyZ54};

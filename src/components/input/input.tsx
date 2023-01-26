@@ -1,6 +1,4 @@
 import { component$, PropFunction, useStore, useStylesScoped$ } from "@builder.io/qwik";
-import { Queries } from "~/logic/queries";
-import { Guess } from "../guess/Guess";
 import styles from './input.css?inline';
 
 type State = {
