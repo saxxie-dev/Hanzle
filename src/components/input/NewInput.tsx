@@ -36,20 +36,23 @@ export default component$((props: InputProps) => {
           if (!zhmatches?.length) { props.setGuess$(""); }
           props.setGuess$(zhmatches[zhmatches.length - 1] as any);
         }}
-        onInput$={e => {
-          if ((e as any).isComposing) {
+        onInput$={ee => {
+          const e = ee as InputEvent & { target: HTMLInputElement };
+          const zhmatches = [...e.target.value.matchAll(findZhCharRegex)];
+          if (e.isComposing) {
             return;
+          }
+          if (zhmatches?.length) {
+            props.setGuess$(zhmatches[zhmatches.length - 1] as any);
           }
           if (store.justComposed) {
             store.justComposed = false;
             return;
           }
-          if (!(e as any).data) {
+          if (!e.data) {
+            if (e.target.value === "") { props.setGuess$("") }
             return;
           }
-          const zhmatches = [...(e as any).target.value.matchAll(findZhCharRegex)];
-          if (!zhmatches?.length) { props.setGuess$(""); }
-          props.setGuess$(zhmatches[zhmatches.length - 1] as any);
           (e as any).target.value = props.guess;
           store.warning = "Make sure you are using your machine's Chinese IME to input a character";
         }} />
