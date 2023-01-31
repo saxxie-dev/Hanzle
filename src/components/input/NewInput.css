@@ -1,0 +1,45 @@
+section {
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  outline: 3px solid #555;
+  padding: 5px;
+}
+
+section:focus-within {
+  outline: 5px auto Highlight;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 12rem;
+  width: 12rem;
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  color: transparent;
+  caret-color: white;
+  text-align: center;
+  font-size: 9rem;
+  margin: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.warning {
+  position: fixed;
+}
+
+.warn2 {
+  color: red;
+  position: relative;
+  top: -5em;
+}

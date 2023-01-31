@@ -1,13 +1,16 @@
-div {
+.verticalAlign {
   display: flex;
   flex-direction: column;
   position: absolute;
+  justify-content: space-around;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
 }
 
-div section {
-  flex-grow: 1;
+.horizontalAlign {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

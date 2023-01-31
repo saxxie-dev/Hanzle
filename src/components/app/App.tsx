@@ -1,8 +1,7 @@
 import { component$, useStore, useStylesScoped$, $, useClientEffect$ } from "@builder.io/qwik";
 import { GameState, generateFreshGameState } from "~/logic/GameState";
-import { generateRenderableIDSGuess, Position } from "~/logic/Scoring";
-import { Guess } from "../guess/Guess";
-import Input from "../input/input";
+import { Position } from "~/logic/Scoring";
+import NewInput from "../input/NewInput";
 import styles from './App.css?inline';
 
 
@@ -16,6 +15,7 @@ export default component$(() => {
     const { secret, secretKnowledge } = generateFreshGameState();
     store.secret = secret;
     store.secretKnowledge = secretKnowledge;
+    console.log(store.secret);
   });
 
   const submitGuess = () => {
@@ -29,14 +29,10 @@ export default component$(() => {
 
 
   return (
-    <div>
-      <section>
-        {//store.guesses.map(g => <Guess char={g} />)}
-        }
-        <Guess char={generateRenderableIDSGuess(store.pendingGuess, store.secretKnowledge)} />
-      </section>
-      ({store.secret});
-      <Input guess={store.pendingGuess} setGuess$={$((g: string): void => { store.pendingGuess = g; })} />
+    <div class='verticalAlign'>
+      <div class='horizontalAlign'>
+        <NewInput guess={store.pendingGuess} secretKnowledge={store.secretKnowledge} setGuess$={$((g: string): void => { store.pendingGuess = g; })} />
+      </div>
     </div>
   );
 });

@@ -11,11 +11,11 @@ export const Guess = component$((props: GuessProps) => {
   useStylesScoped$(styles);
   const { w, h } = props.char.note.position;
   const dimStyle = `width: ${w}rem; 
-    height: ${h}rem;`
+    height: ${h}rem;`;
   const textStyle = `
     line-height:${h}rem;
-    font-size: ${h}rem;
-    transform: scaleX(${w / h});`
+    font-size: ${h * 0.95}rem;
+    transform: scaleX(${w / h});`;
 
   switch (props.char.type) {
     case 'Leaf':
