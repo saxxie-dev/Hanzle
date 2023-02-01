@@ -30,6 +30,10 @@ input {
   margin: 5px;
 }
 
+.gridAdapter {
+  margin: auto;
+}
+
 input:focus {
   outline: none;
 }

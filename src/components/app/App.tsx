@@ -1,6 +1,7 @@
 import { component$, useStore, useStylesScoped$, $, useClientEffect$ } from "@builder.io/qwik";
 import { GameState, generateFreshGameState } from "~/logic/GameState";
-import { Position } from "~/logic/Scoring";
+import { generateRenderableIDSGuess, Position } from "~/logic/Scoring";
+import { Guess } from "../guess/Guess";
 import NewInput from "../input/NewInput";
 import styles from './App.css?inline';
 
@@ -18,21 +19,23 @@ export default component$(() => {
     console.log(store.secret);
   });
 
-  const submitGuess = () => {
-    const { pendingGuess } = store;
-    // guesses = guesses.push(pendingGuess)
-    if (pendingGuess === store.secret) {
-      alert("You did it");
-      store.pendingGuess = "";
-    }
-  }
-
 
   return (
-    <div class='verticalAlign'>
-      <div class='horizontalAlign'>
-        <NewInput guess={store.pendingGuess} secretKnowledge={store.secretKnowledge} setGuess$={$((g: string): void => { store.pendingGuess = g; })} />
-      </div>
+    <div class='guessGrid'>
+      {store.previousGuesses.map((guess, i) => (
+        <div class='previousGuess'><Guess key={i} char={generateRenderableIDSGuess(guess, store.secretKnowledge)} /></div>))}
+      <NewInput
+        guess={store.pendingGuess}
+        secretKnowledge={store.secretKnowledge}
+        setGuess$={$((g: string): void => { store.pendingGuess = g; })}
+        submit$={$(() => {
+          console.log("submit!", store.pendingGuess, store.secret);
+          store.previousGuesses = [...store.previousGuesses, store.pendingGuess];
+          store.pendingGuess = "";
+          if (store.pendingGuess === store.secret) {
+            alert("You did it");
+          }
+        })} />
     </div>
   );
 });

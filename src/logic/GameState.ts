@@ -7,6 +7,7 @@ export type GameState = {
   secretKnowledge: GuessMatches;
   publicKnowledge: PreviewMatches;
   pendingGuess: string;
+  previousGuesses: string[];
 }
 export const generateFreshGameState = (): GameState => {
   const secret = getRandomCharacter();
@@ -15,6 +16,7 @@ export const generateFreshGameState = (): GameState => {
     secretKnowledge: getSecretKnowledge(secret),
     publicKnowledge: {},
     pendingGuess: '',
+    previousGuesses: [],
   };
 }
 

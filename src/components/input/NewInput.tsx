@@ -11,6 +11,7 @@ type State = {
 type InputProps = {
   guess: string;
   setGuess$: PropFunction<(s: string) => void>;
+  submit$: PropFunction<() => void>;
   secretKnowledge: GuessMatches;
 }
 export default component$((props: InputProps) => {
@@ -19,7 +20,7 @@ export default component$((props: InputProps) => {
     justComposed: false,
   });
 
-  return <><section>
+  return <div class="gridAdapter"><section>
 
     <Guess char={generateRenderableIDSGuess(props.guess, props.secretKnowledge)} />
     <div>
@@ -34,7 +35,7 @@ export default component$((props: InputProps) => {
         onCompositionEnd$={e => {
           const zhmatches = [...e.data.matchAll(findZhCharRegex)];
           if (!zhmatches?.length) { props.setGuess$(""); }
-          props.setGuess$(zhmatches[zhmatches.length - 1] as any);
+          props.setGuess$(zhmatches[zhmatches.length - 1][0] as any);
         }}
         onInput$={ee => {
           const e = ee as InputEvent & { target: HTMLInputElement };
@@ -43,7 +44,7 @@ export default component$((props: InputProps) => {
             return;
           }
           if (zhmatches?.length) {
-            props.setGuess$(zhmatches[zhmatches.length - 1] as any);
+            props.setGuess$(zhmatches[zhmatches.length - 1][0] as any);
           }
           if (store.justComposed) {
             store.justComposed = false;
@@ -55,6 +56,9 @@ export default component$((props: InputProps) => {
           }
           (e as any).target.value = props.guess;
           store.warning = "Make sure you are using your machine's Chinese IME to input a character";
+        }}
+        onKeyDown$={e => {
+          if (e.key === "Enter") { setTimeout(props.submit$, 10); }
         }} />
     </div>
   </section>
@@ -62,7 +66,7 @@ export default component$((props: InputProps) => {
       <div class="warn2">
         {store.warning}
       </div>
-    </div></>;
+    </div></div>;
 
 });
 
