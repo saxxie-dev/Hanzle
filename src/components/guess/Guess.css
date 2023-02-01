@@ -20,6 +20,7 @@ div.Row {
 }
 
 .unknown {
+  box-shadow: none;
   background-color: transparent;
 }
 

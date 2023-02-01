@@ -1,5 +1,5 @@
 import { component$, useStore, useStylesScoped$, $, useClientEffect$ } from "@builder.io/qwik";
-import { GameState, generateFreshGameState } from "~/logic/GameState";
+import { GameState, generateFreshGameState, updatePreviewMap } from "~/logic/GameState";
 import { generateRenderableIDSGuess, Position } from "~/logic/Scoring";
 import { Guess } from "../guess/Guess";
 import NewInput from "../input/NewInput";
@@ -26,11 +26,12 @@ export default component$(() => {
         <div class='previousGuess'><Guess key={i} char={generateRenderableIDSGuess(guess, store.secretKnowledge)} /></div>))}
       <NewInput
         guess={store.pendingGuess}
-        secretKnowledge={store.secretKnowledge}
+        publicKnowledge={store.publicKnowledge}
         setGuess$={$((g: string): void => { store.pendingGuess = g; })}
         submit$={$(() => {
           console.log("submit!", store.pendingGuess, store.secret);
           store.previousGuesses = [...store.previousGuesses, store.pendingGuess];
+          store.publicKnowledge = updatePreviewMap(store.publicKnowledge, store.secretKnowledge, store.pendingGuess);
           store.pendingGuess = "";
           if (store.pendingGuess === store.secret) {
             alert("You did it");

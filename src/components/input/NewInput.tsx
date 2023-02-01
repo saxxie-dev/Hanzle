@@ -1,5 +1,5 @@
 import { component$, PropFunction, useStore, useStylesScoped$ } from "@builder.io/qwik";
-import { generateRenderableIDSGuess, GuessMatches } from "~/logic/Scoring";
+import { generateRenderableIDSGuess, generateRenderableIDSPreview, GuessMatches, PreviewMatches } from "~/logic/Scoring";
 import { Guess } from "../guess/Guess";
 import styles from './NewInput.css?inline';
 
@@ -12,7 +12,7 @@ type InputProps = {
   guess: string;
   setGuess$: PropFunction<(s: string) => void>;
   submit$: PropFunction<() => void>;
-  secretKnowledge: GuessMatches;
+  publicKnowledge: PreviewMatches;
 }
 export default component$((props: InputProps) => {
   useStylesScoped$(styles);
@@ -22,7 +22,7 @@ export default component$((props: InputProps) => {
 
   return <div class="gridAdapter"><section>
 
-    <Guess char={generateRenderableIDSGuess(props.guess, props.secretKnowledge)} />
+    <Guess char={generateRenderableIDSPreview(props.guess, props.publicKnowledge)} />
     <div>
       <input
         type="text"
@@ -34,7 +34,7 @@ export default component$((props: InputProps) => {
         }}
         onCompositionEnd$={e => {
           const zhmatches = [...e.data.matchAll(findZhCharRegex)];
-          if (!zhmatches?.length) { props.setGuess$(""); }
+          if (!zhmatches?.length) { props.setGuess$(""); return; }
           props.setGuess$(zhmatches[zhmatches.length - 1][0] as any);
         }}
         onInput$={ee => {

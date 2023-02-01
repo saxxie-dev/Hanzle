@@ -1,6 +1,6 @@
 import { Data } from "./Data";
 import { IDS } from "./IDS";
-import { GuessMatches, Position, PreviewMatches, triangulateExpandedExpression } from "./Scoring";
+import { GuessMatches, Position, positionEq, PreviewMatches, triangulateExpandedExpression } from "./Scoring";
 
 export type GameState = {
   secret: string;
@@ -42,10 +42,10 @@ const annotateAndExpand = (c: string): IDS.Expr<string, { original?: string }> =
 const getSecretKnowledge = (c: string): GuessMatches => {
   const expanded = annotateAndExpand(c);
   const triangulated = triangulateExpandedExpression(expanded, { x: 0, y: 0, h: 12, w: 12 });
-  return extractMatches(triangulated);
+  return extractGuessMatches(triangulated);
 };
 
-const extractMatches = (e: IDS.Expr<string, { original?: string, position: Position }>): GuessMatches => {
+const extractGuessMatches = (e: IDS.Expr<string, { original?: string, position: Position }>): GuessMatches => {
   const paraState: GuessMatches = {};
   const trav = (expr: IDS.Expr<string, { original?: string, position: Position }>): void => {
     if (expr.note.original) {
@@ -59,3 +59,28 @@ const extractMatches = (e: IDS.Expr<string, { original?: string, position: Posit
   trav(e);
   return paraState
 };
+
+export const updatePreviewMap = (previewMap: PreviewMatches, secrets: GuessMatches, char: string): PreviewMatches => {
+  const expanded = annotateAndExpand(char);
+  const triangulated = triangulateExpandedExpression(expanded, { x: 0, y: 0, h: 12, w: 12 });
+  const paraState: PreviewMatches = { ...previewMap };
+  const trav = (expr: IDS.Expr<string, { original?: string, position: Position }>): void => {
+    if (expr.note.original) {
+      if (!secrets[expr.note.original]) {
+        paraState[expr.note.original] = { type: "absent" };
+      } else {
+        const prevMatch = paraState[expr.note.original];
+        if (prevMatch?.type === "absent") { throw `Error: absent match ${expr.note.original} reappeared`; }
+        const prevPositions: Position[] = prevMatch?.knownPositions ?? [];
+        if (secrets[expr.note.original].positions.findIndex(positionEq(expr.note.position)) >= -1) {
+          paraState[expr.note.original] = { type: "present", knownPositions: [...prevPositions, expr.note.position] };
+        } else {
+          paraState[expr.note.original] = { type: "present", knownPositions: prevPositions };
+        }
+      }
+    }
+    IDS.map(expr, trav);
+  };
+  trav(triangulated);
+  return paraState;
+}

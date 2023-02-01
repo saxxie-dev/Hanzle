@@ -1,0 +1,6 @@
+import{J as l,T as d,_ as h,a as o,z as s,E as f}from"./q-acba68ae.js";import{G as n}from"./q-42075853.js";const m=`div{display:flex;box-sizing:border-box;font-family:"Noto Serif SC";border-radius:.5rem;box-shadow:.25rem .25rem #c8c8c880 inset}span{transform-origin:top left;margin-top:-.05em}div.Col{flex-direction:column}div.Row{flex-direction:row}.unknown{box-shadow:none;background-color:transparent}.absent{background-color:#787c7e;color:#fff}.present{background-color:#c9b458;color:#fff}.correct{background-color:#6aaa64;color:#fff}
+`,u=m,b=e=>{l(d(()=>h(()=>Promise.resolve().then(()=>_),void 0),"s_C3ThiTpEF2I"));const{w:c,h:t}=e.char.note.position,a=`width: ${c}rem;
+  height: ${t}rem;`,i=`
+  line-height:${t}rem;
+  font-size: ${t*.95}rem;
+  transform: scaleX(${c/t});`;switch(e.char.type){case"Leaf":return o("div",{style:a,get class(){return e.char.val.color},children:o("span",{style:i,children:s(e.char.val,"char")}),[f]:{class:s(e.char.val,"color")}});case"⿰":case"⿲":return o("div",{class:"Row",style:a,children:e.char.args.map(r=>o(n,{char:r},r.note.position.x))});case"⿱":case"⿳":return o("div",{class:"Col",style:a,children:e.char.args.map(r=>o(n,{char:r},r.note.position.y))})}},_=Object.freeze(Object.defineProperty({__proto__:null,s_C3ThiTpEF2I:u,s_TbFW62RyZ54:b},Symbol.toStringTag,{value:"Module"}));export{u as s_C3ThiTpEF2I,b as s_TbFW62RyZ54};

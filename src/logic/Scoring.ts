@@ -43,7 +43,7 @@ export const generateRenderableIDSPreview = (char: string, matchMap: PreviewMatc
   return expandAndColorize(char, matchMap, colorizationScheme);
 }
 
-const positionEq = ({ x: x1, y: y1, w: w1, h: h1 }: Position) => ({ x: x2, y: y2, w: w2, h: h2 }: Position) => {
+export const positionEq = ({ x: x1, y: y1, w: w1, h: h1 }: Position) => ({ x: x2, y: y2, w: w2, h: h2 }: Position) => {
   return x1 === x2 && y1 === y2 && w1 === w2 && h1 === h2;
 }
 
