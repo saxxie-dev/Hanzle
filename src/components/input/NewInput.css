@@ -5,6 +5,7 @@ section {
   border-radius: 0.5rem;
   outline: 3px solid #555;
   padding: 5px;
+  overflow: hidden;
 }
 
 section:focus-within {
