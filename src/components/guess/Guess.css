@@ -2,7 +2,7 @@ div {
   display: flex;
   box-sizing: border-box;
   font-family: 'Noto Serif SC';
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   box-shadow: 0.25rem 0.25rem 0px rgba(200, 200, 200, 0.5) inset
 }
 

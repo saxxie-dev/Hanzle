@@ -62,11 +62,7 @@ export default component$((props: InputProps) => {
         }} />
     </div>
   </section>
-    <div class="warning">
-      <div class="warn2">
-        {store.warning}
-      </div>
-    </div></div>;
+  </div>;
 
 });
 
