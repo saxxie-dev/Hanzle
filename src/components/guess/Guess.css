@@ -3,7 +3,7 @@ div {
   box-sizing: border-box;
   font-family: 'Noto Serif SC';
   border-radius: 0.3rem;
-  box-shadow: 0.25rem 0.25rem 0px rgba(200, 200, 200, 0.5) inset
+  outline: 1px solid white;
 }
 
 span {
@@ -19,9 +19,17 @@ div.Row {
   flex-direction: row;
 }
 
+div.Outer {
+  position: relative;
+}
+
+div.Inner {
+  position: absolute;
+}
+
 .unknown {
   box-shadow: none;
-  background-color: transparent;
+  background-color: white;
 }
 
 .absent {

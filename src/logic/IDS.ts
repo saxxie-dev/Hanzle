@@ -3,7 +3,7 @@ import { Eq } from '../prelude';
 export namespace IDS {
   // TODO: Uncomment extras below to expand list of allowed combinations.
   export const Combo1_enumeration = [] as never[]; //'〾', '↔', '↷', '⊖'] as const;
-  export const Combo2_enumeration = ['⿰', '⿱'] as const; //, '⿴', '⿵', '⿶', '⿷', '⿸', '⿹', '⿺', '⿻'] as const;
+  export const Combo2_enumeration = ['⿰', '⿱', '⿴', '⿵', '⿶', '⿷', '⿸', '⿹', '⿺'] as const;// , '⿻'] as const;
   export const Combo3_enumeration = ['⿲', '⿳'] as const;
 
 
@@ -33,6 +33,13 @@ export namespace IDS {
         return expr;
       case '⿰':
       case '⿱':
+      case '⿺':
+      case '⿹':
+      case '⿸':
+      case '⿶':
+      case '⿵':
+      case '⿷':
+      case '⿴':
         return {
           type: expr.type,
           note: expr.note,
@@ -59,6 +66,13 @@ export namespace IDS {
         return { type: expr.type, val: expr.val, note: f(expr.note!) };
       case '⿰':
       case '⿱':
+      case '⿺':
+      case '⿹':
+      case '⿸':
+      case '⿶':
+      case '⿵':
+      case '⿷':
+      case '⿴':
         return {
           type: expr.type,
           note: f(expr.note!),

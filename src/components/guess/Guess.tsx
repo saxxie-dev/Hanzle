@@ -30,5 +30,21 @@ export const Guess = component$((props: GuessProps) => {
       return <div class='Col' style={dimStyle}>
         {props.char.args.map(x => <Guess char={x} key={x.note.position.y} />)}
       </div>;
+    case '⿺':
+    case '⿹':
+    case '⿸':
+    case '⿶':
+    case '⿵':
+    case '⿷':
+    case '⿴':
+      const offsetX = props.char.args[1].note.position.x - props.char.note.position.x;
+      const offsetY = props.char.args[1].note.position.y - props.char.note.position.y;
+      const innerStyle = `top: ${offsetY}rem; left: ${offsetX}rem;`
+      return <div class="Outer" style={dimStyle}>
+        <Guess char={props.char.args[0]} />
+        <div class="Inner" style={innerStyle}>
+          <Guess char={props.char.args[1]} />
+        </div>
+      </div>;
   }
 });

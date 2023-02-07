@@ -72,7 +72,7 @@ export const updatePreviewMap = (previewMap: PreviewMatches, secrets: GuessMatch
         const prevMatch = paraState[expr.note.original];
         if (prevMatch?.type === "absent") { throw `Error: absent match ${expr.note.original} reappeared`; }
         const prevPositions: Position[] = prevMatch?.knownPositions ?? [];
-        if (secrets[expr.note.original].positions.findIndex(positionEq(expr.note.position)) >= -1) {
+        if (secrets[expr.note.original].positions.findIndex(positionEq(expr.note.position)) > -1) {
           paraState[expr.note.original] = { type: "present", knownPositions: [...prevPositions, expr.note.position] };
         } else {
           paraState[expr.note.original] = { type: "present", knownPositions: prevPositions };

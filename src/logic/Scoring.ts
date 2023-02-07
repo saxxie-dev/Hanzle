@@ -127,6 +127,48 @@ export const triangulateExpandedExpression = <Q extends {}>(
         triangulateExpandedExpression(expr.args[0], { x, y, w, h: h / 2 }),
         triangulateExpandedExpression(expr.args[1], { x, y: y + h / 2, w, h: h / 2 })]
     };
+    case '⿺': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 2, y, w: w / 2, h: h / 2 }),
+      ],
+    };
+    case '⿹': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x, y: y + h / 2, w: w / 2, h: h / 2 }),
+      ],
+    };
+    case '⿸': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 2, y: y + h / 2, w: w / 2, h: h / 2 }),
+      ],
+    };
+    case '⿶': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y, w: w / 3, h: h * 2 / 3 }),
+      ],
+    };
+    case '⿵': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y: y + h / 3, w: w / 3, h: h * 2 / 3 }),
+      ],
+    };
+    case '⿷': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y: y + h / 3, w: w * 2 / 3, h: h / 3 }),
+      ],
+    };
+    case '⿴': return {
+      ...expr, note, args: [
+        triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
+        triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y: y + h / 3, w: w / 3, h: h / 3 }),
+      ],
+    };
     case '⿲': return {
       ...expr, note, args: [
         triangulateExpandedExpression(expr.args[0], { x, y, w: w / 3, h }),
