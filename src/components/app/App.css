@@ -1,14 +1,8 @@
-.horizontalAlign {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 .guessGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  column-gap: 8px;
-  row-gap: 8px;
+  grid-template-columns: repeat(auto-fill, calc(12rem + 10px));
+  justify-content: center;
+  margin: auto;
 }
 
 .previousGuess {
