@@ -1,0 +1,1 @@
+import{c as e,T as o,_ as t}from"./q-acba68ae.js";const a=e(o(()=>t(()=>import("./q-b4fe68ae.js"),["build/q-b4fe68ae.js","build/q-acba68ae.js"]),"s_xYL1qOwPyDI")),i={title:"汉字le ideograph guessing game",meta:[{name:"description",content:"wordle-knockoff for guessing chinese characters"}]};export{a as default,i as head};

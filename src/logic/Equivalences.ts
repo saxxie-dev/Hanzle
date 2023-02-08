@@ -1,4 +1,4 @@
-export const radicalMap = {
+export const radicalMap: Record<string, string> = {
   "亻": "人",
   "𠆢": "人",
   "灬": "火",
@@ -30,6 +30,11 @@ export const radicalMap = {
   "爫": "爪",
   "⺆": "冂",
   "囗": "口",
+};
+
+export const normalizeRadical = (r: string): string => {
+  if (radicalMap[r]) { return radicalMap[r]; }
+  return r;
 }
 
 // const halfsizeRadicals = "艹讠扌".split("");

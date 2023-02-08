@@ -1,4 +1,5 @@
 import { Data } from "./Data";
+import { normalizeRadical } from "./Equivalences";
 import { IDS } from "./IDS";
 import { GuessMatches, Position, positionEq, PreviewMatches, triangulateExpandedExpression } from "./Scoring";
 
@@ -64,23 +65,37 @@ export const updatePreviewMap = (previewMap: PreviewMatches, secrets: GuessMatch
   const expanded = annotateAndExpand(char);
   const triangulated = triangulateExpandedExpression(expanded, { x: 0, y: 0, h: 12, w: 12 });
   const paraState: PreviewMatches = { ...previewMap };
-  const trav = (expr: IDS.Expr<string, { original?: string, position: Position }>): void => {
+  const trav = (expr: IDS.Expr<string, { original?: string, position: Position }>): boolean => {
     if (expr.note.original) {
-      if (!secrets[expr.note.original]) {
-        paraState[expr.note.original] = { type: "absent" };
-      } else {
-        const prevMatch = paraState[expr.note.original];
+      const normog = normalizeRadical(expr.note.original);
+      if (secrets[normog]) {
+        const prevMatch = paraState[normog];
         if (prevMatch?.type === "absent") { throw `Error: absent match ${expr.note.original} reappeared`; }
         const prevPositions: Position[] = prevMatch?.knownPositions ?? [];
-        if (secrets[expr.note.original].positions.findIndex(positionEq(expr.note.position)) > -1) {
-          paraState[expr.note.original] = { type: "present", knownPositions: [...prevPositions, expr.note.position] };
+        if (secrets[normog].positions.findIndex(positionEq(expr.note.position)) > -1) {
+          paraState[normog] = { type: "present", knownPositions: [...prevPositions, expr.note.position] };
         } else {
-          paraState[expr.note.original] = { type: "present", knownPositions: prevPositions };
+          paraState[normog] = { type: "present", knownPositions: prevPositions };
+        }
+        IDS.map(expr, trav);
+        return true;
+      } else {
+        const submatches = IDS.map(expr, trav);
+        if (submatches.type !== "Leaf" && submatches.args.some(x => x)) {
+          return true
+        } else {
+          paraState[normog] = { type: "absent" };
+          return false;
         }
       }
     }
-    IDS.map(expr, trav);
+    const submatches = IDS.map(expr, trav);
+    if (submatches.type !== "Leaf") {
+      return submatches.args.some(x => x);
+    }
+    return false;
   };
   trav(triangulated);
+  console.log(paraState);
   return paraState;
 }

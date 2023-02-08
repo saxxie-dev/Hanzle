@@ -1,4 +1,5 @@
 import { Data } from './Data';
+import { normalizeRadical } from './Equivalences';
 import { IDS } from './IDS';
 
 export type GuessColor = 'absent' | 'present' | 'correct';
@@ -86,7 +87,7 @@ const conditionalExpand = <A>(
   matchMap: Record<string, A>,
 ): [boolean, IDS.Expr<string, undefined>] => {
   if (expr.type === 'Leaf') {
-    if (matchMap[expr.val]) { return [true, expr]; }
+    if (matchMap[normalizeRadical(expr.val)]) { return [true, expr]; }
     if (!Data.IDSMap[expr.val]) { return [false, expr]; }
     const [matched, exp] = conditionalExpand(Data.IDSMap[expr.val], matchMap);
     if (!matched) { return [false, expr]; }
@@ -194,7 +195,7 @@ const colorizeTriangulatedExpression = <A, C>(
   return IDS.mapLeaves(
     expr,
     (char: string, { position }: { position: Position }): ColoredChar<C> => {
-      return { char, color: colorize(matchMap[char], position) };
+      return { char, color: colorize(matchMap[normalizeRadical(char)], position) };
     });
 };
 
