@@ -1,7 +1,7 @@
 div {
   display: flex;
   box-sizing: border-box;
-  font-family: 'Noto Serif SC';
+  font-family: 'Noto Serif SC', serif;
   border-radius: 0.3rem;
   outline: 1px solid white;
 }

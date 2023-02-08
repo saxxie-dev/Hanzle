@@ -96,6 +96,5 @@ export const updatePreviewMap = (previewMap: PreviewMatches, secrets: GuessMatch
     return false;
   };
   trav(triangulated);
-  console.log(paraState);
   return paraState;
 }

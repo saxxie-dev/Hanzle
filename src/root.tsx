@@ -19,7 +19,7 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" />
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:wght@400;700" />
         <RouterHead />
       </head>
       <body lang="en">

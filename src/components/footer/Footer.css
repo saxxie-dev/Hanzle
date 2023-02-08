@@ -1,0 +1,15 @@
+footer {
+  padding: 2em;
+  color: #666;
+  text-align: center;
+}
+
+svg {
+  cursor: pointer;
+}
+
+a {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
