@@ -7,5 +7,5 @@ import { parseIDS } from './Parser';
 export namespace Data {
   export const IDSMap = recordMap((rawIDSData$ as any).default as Record<string, string>, parseIDS);
   export const candidates = (rawCharList$ as any).default as string[];
-  export const strokeCounts = rawStrokeCounts$;
+  export const strokeCounts: Record<string, number> = (rawStrokeCounts$ as any).default;
 }

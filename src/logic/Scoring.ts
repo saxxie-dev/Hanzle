@@ -111,6 +111,9 @@ export const triangulateExpandedExpression = <Q extends {}>(
     ...(expr.note as Q),
     position: { x, y, h, w },
   };
+  const strokeCount = getStrokeCount(expr);
+  let lf: number;
+  let mf: number;
   switch (expr.type) {
     case 'Leaf':
       return {
@@ -118,16 +121,19 @@ export const triangulateExpandedExpression = <Q extends {}>(
         note,
       };
     case '⿰':
+      lf = getStrokeCount(expr.args[0]) / strokeCount;
       return {
         ...expr, note, args: [
-          triangulateExpandedExpression(expr.args[0], { x, y, w: w / 2, h }),
-          triangulateExpandedExpression(expr.args[1], { x: x + w / 2, y, w: w / 2, h })]
+          triangulateExpandedExpression(expr.args[0], { x, y, w: w * lf, h }),
+          triangulateExpandedExpression(expr.args[1], { x: x + w * lf, y, w: w * (1 - lf), h })]
       };
-    case '⿱': return {
-      ...expr, note, args: [
-        triangulateExpandedExpression(expr.args[0], { x, y, w, h: h / 2 }),
-        triangulateExpandedExpression(expr.args[1], { x, y: y + h / 2, w, h: h / 2 })]
-    };
+    case '⿱':
+      lf = getStrokeCount(expr.args[0]) / strokeCount;
+      return {
+        ...expr, note, args: [
+          triangulateExpandedExpression(expr.args[0], { x, y, w, h: h * lf }),
+          triangulateExpandedExpression(expr.args[1], { x, y: y + h * lf, w, h: h * (1 - lf) })]
+      };
     case '⿺': return {
       ...expr, note, args: [
         triangulateExpandedExpression(expr.args[0], { x, y, w, h }),
@@ -170,18 +176,24 @@ export const triangulateExpandedExpression = <Q extends {}>(
         triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y: y + h / 3, w: w / 3, h: h / 3 }),
       ],
     };
-    case '⿲': return {
-      ...expr, note, args: [
-        triangulateExpandedExpression(expr.args[0], { x, y, w: w / 3, h }),
-        triangulateExpandedExpression(expr.args[1], { x: x + w / 3, y, w: w / 3, h }),
-        triangulateExpandedExpression(expr.args[2], { x: x + 2 * w / 3, y, w: w / 3, h })]
-    };
-    case '⿳': return {
-      ...expr, note, args: [
-        triangulateExpandedExpression(expr.args[0], { x, y, w, h: h / 3 }),
-        triangulateExpandedExpression(expr.args[1], { x, y: y + h / 3, w, h: h / 3 }),
-        triangulateExpandedExpression(expr.args[2], { x, y: y + 2 * h / 3, w, h: h / 3 })]
-    };
+    case '⿲':
+      lf = getStrokeCount(expr.args[0]) / strokeCount;
+      mf = getStrokeCount(expr.args[1]) / strokeCount;
+      return {
+        ...expr, note, args: [
+          triangulateExpandedExpression(expr.args[0], { x, y, w: w * lf, h }),
+          triangulateExpandedExpression(expr.args[1], { x: x + w * lf, y, w: w * mf, h }),
+          triangulateExpandedExpression(expr.args[2], { x: x + w * (lf + mf), y, w: w * (1 - lf - mf), h })]
+      };
+    case '⿳':
+      lf = getStrokeCount(expr.args[0]) / strokeCount;
+      mf = getStrokeCount(expr.args[1]) / strokeCount;
+      return {
+        ...expr, note, args: [
+          triangulateExpandedExpression(expr.args[0], { x, y, w, h: h * lf }),
+          triangulateExpandedExpression(expr.args[1], { x, y: y + h * lf, w, h: h * mf }),
+          triangulateExpandedExpression(expr.args[2], { x, y: y + h * (lf + mf), w, h: h * (1 - lf - mf) })]
+      };
   }
 };
 
@@ -199,3 +211,23 @@ const colorizeTriangulatedExpression = <A, C>(
     });
 };
 
+const getStrokeCount = <A>(expr: IDS.Expr<string, A>): number => {
+  if (expr.type === 'Leaf') {
+    if (Data.strokeCounts[expr.val] ?? Data.strokeCounts[normalizeRadical(expr.val)]) {
+      return Data.strokeCounts[expr.val] ?? Data.strokeCounts[normalizeRadical(expr.val)]
+    } else if (Data.IDSMap[expr.val]) {
+      const v = getStrokeCount(Data.IDSMap[expr.val]);
+      Data.strokeCounts[expr.val] = v;
+      return v;
+    } else {
+      console.error(`Couldn't get stroke count for "${expr.val}"`);
+      return 1;
+    }
+  }
+  const subCounts: IDS.ExprF<number, number, A> = IDS.map<IDS.Expr<string, A>, number, number, A>(expr, getStrokeCount);
+  if (subCounts.type === 'Leaf') {
+    console.error(`Couldn't properly extract stroke counts by expanding ${JSON.stringify(expr)}`);
+    return 1;
+  }
+  return subCounts.args.reduce((x, y) => x + y);
+}
