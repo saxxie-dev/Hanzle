@@ -44,8 +44,19 @@ export const generateRenderableIDSPreview = (char: string, matchMap: PreviewMatc
   return expandAndColorize(char, matchMap, colorizationScheme);
 }
 
+// Determine whether positions are close enough to color green
 export const positionEq = ({ x: x1, y: y1, w: w1, h: h1 }: Position) => ({ x: x2, y: y2, w: w2, h: h2 }: Position) => {
-  return x1 === x2 && y1 === y2 && w1 === w2 && h1 === h2;
+  // Could be renamed tbh - this logic used to be exact and is now just comparing corners
+  return discretizeAxis(x1, w1) === discretizeAxis(x2, w2) && discretizeAxis(y1, h1) === discretizeAxis(y2, h2);
+}
+
+const discretizeAxis = (n: number, d: number): -1 | 0 | 1 | 2 => {
+  const l = n;
+  const r = n + d;
+  if (l === 0 && r === 12) { return 2; }
+  if (l === 0) { return -1; }
+  if (r === 12) { return 1; }
+  return 0;
 }
 
 export type GuessCharKnowledge = {
