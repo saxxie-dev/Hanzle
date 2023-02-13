@@ -11,7 +11,6 @@ export type HintProps = {
 export const Hint = component$((props: HintProps) => {
   useStylesScoped$(styles);
   const { x, y, w, h } = props.position;
-  console.log(props.char, x, y, w, h);
   const innerStyle = `
     left: ${x}rem;
     top: ${y}rem;
