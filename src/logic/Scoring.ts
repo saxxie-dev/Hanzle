@@ -222,7 +222,7 @@ const colorizeTriangulatedExpression = <A, C>(
     });
 };
 
-const getStrokeCount = <A>(expr: IDS.Expr<string, A>): number => {
+export const getStrokeCount = <A>(expr: IDS.Expr<string, A>): number => {
   if (expr.type === 'Leaf') {
     if (Data.strokeCounts[expr.val] ?? Data.strokeCounts[normalizeRadical(expr.val)]) {
       return Data.strokeCounts[expr.val] ?? Data.strokeCounts[normalizeRadical(expr.val)]

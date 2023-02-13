@@ -3,14 +3,14 @@ section {
   height: 12rem;
   width: 12rem;
   border-radius: 0.5rem;
-  outline: 3px solid #555;
+  outline: 2px solid #555;
   padding: 5px;
   overflow: hidden;
 }
 
 section:focus-within {
-  outline: 5px auto Highlight;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px auto Highlight;
+  outline: 3px auto -webkit-focus-ring-color;
 }
 
 input {

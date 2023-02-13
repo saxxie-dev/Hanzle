@@ -21,6 +21,7 @@ export const radicalMap: Record<string, string> = {
   "𤣩": "玉",
   "犭": "犬",
   "衤": "衣",
+  "礻": "示",
   "辶": "辵",
   // "阝": "阜", // Also is 邑 when on RHS
   "刂": "刀",

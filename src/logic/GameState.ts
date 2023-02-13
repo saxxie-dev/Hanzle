@@ -1,14 +1,19 @@
 import { Data } from "./Data";
 import { normalizeRadical } from "./Equivalences";
 import { IDS } from "./IDS";
-import { GuessMatches, Position, positionEq, PreviewMatches, triangulateExpandedExpression } from "./Scoring";
+import type { GuessMatches, Position, PreviewMatches } from "./Scoring";
+import { positionEq, triangulateExpandedExpression } from "./Scoring";
+
+export type GuessOrHint =
+  { type: "Guess", value: string } |
+  { type: "Hint", value: string, position: Position };
 
 export type GameState = {
   secret: string;
   secretKnowledge: GuessMatches;
   publicKnowledge: PreviewMatches;
   pendingGuess: string;
-  previousGuesses: string[];
+  previousGuesses: GuessOrHint[];
 }
 export const generateFreshGameState = (): GameState => {
   const secret = getRandomCharacter();

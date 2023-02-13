@@ -1,5 +1,7 @@
-import { component$, PropFunction, useStore, useStylesScoped$ } from "@builder.io/qwik";
-import { generateRenderableIDSGuess, generateRenderableIDSPreview, GuessMatches, PreviewMatches } from "~/logic/Scoring";
+import type { PropFunction } from "@builder.io/qwik";
+import { component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
+import type { PreviewMatches } from "~/logic/Scoring";
+import { generateRenderableIDSPreview } from "~/logic/Scoring";
 import { Guess } from "../guess/Guess";
 import styles from './NewInput.css?inline';
 

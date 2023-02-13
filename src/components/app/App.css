@@ -5,7 +5,7 @@
   justify-content: center;
   flex-grow: 1;
   flex-shrink: 0;
-  justify-self: flex-start;
+  grid-gap: 5px;
 }
 
 .previousGuess {
@@ -21,4 +21,26 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
+}
+
+.giveHint {
+  all: unset;
+  height: 6rem;
+  width: 6rem;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2rem;
+  border: 3px solid #555;
+}
+
+.giveHint:hover {
+  background-color: #EEE
+}
+
+.giveHint:focus {
+  background-color: #AAA
 }

@@ -27,6 +27,15 @@ div.Inner {
   position: absolute;
 }
 
+div.Hint {
+  outline: 2px dotted #555;
+  color: #555;
+  outline-offset: 1px;
+  height: 12rem;
+  width: 12rem;
+  position: relative;
+}
+
 .unknown {
   box-shadow: none;
   background-color: white;

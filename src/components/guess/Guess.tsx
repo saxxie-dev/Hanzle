@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { ColorizedIDS, RenderableIDSGuess } from "~/logic/Scoring";
+import type { ColorizedIDS } from "~/logic/Scoring";
 import styles from './Guess.css?inline';
 
 
