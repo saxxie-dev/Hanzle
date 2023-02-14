@@ -1,5 +1,5 @@
 import { Data } from './Data';
-import { normalizeRadical } from './Equivalences';
+import { normalizeRadical } from './Radicals';
 import { IDS } from './IDS';
 
 export type GuessColor = 'absent' | 'present' | 'correct';
@@ -60,6 +60,7 @@ const discretizeAxis = (n: number, d: number): -1 | 0 | 1 | 2 => {
 }
 
 export type GuessCharKnowledge = {
+  version: string; // Radical alternative used. If there are multiple of the same character, which I don't think happens, this will cause non-breaking weirdness
   positions: Position[];
 };
 export type PreviewCharKnowledge = {

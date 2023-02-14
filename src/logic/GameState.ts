@@ -1,5 +1,5 @@
 import { Data } from "./Data";
-import { normalizeRadical } from "./Equivalences";
+import { normalizeRadical } from "./Radicals";
 import { IDS } from "./IDS";
 import type { GuessMatches, Position, PreviewMatches } from "./Scoring";
 import { positionEq, triangulateExpandedExpression } from "./Scoring";
@@ -18,7 +18,7 @@ export type GameState = {
 export const generateFreshGameState = (): GameState => {
   const secret = getRandomCharacter();
   return {
-    secret,
+    secret: secret,
     secretKnowledge: getSecretKnowledge(secret),
     publicKnowledge: {},
     pendingGuess: '',
@@ -55,10 +55,11 @@ const extractGuessMatches = (e: IDS.Expr<string, { original?: string, position: 
   const paraState: GuessMatches = {};
   const trav = (expr: IDS.Expr<string, { original?: string, position: Position }>): void => {
     if (expr.note.original) {
-      if (!paraState[expr.note.original]) {
-        paraState[expr.note.original] = { positions: [] };
+      const normalized = normalizeRadical(expr.note.original);
+      if (!paraState[normalized]) {
+        paraState[normalized] = { version: expr.note.original, positions: [] };
       }
-      paraState[expr.note.original].positions.push(expr.note.position);
+      paraState[normalized].positions.push(expr.note.position);
     }
     IDS.map(expr, trav);
   };
@@ -102,4 +103,16 @@ export const updatePreviewMap = (previewMap: PreviewMatches, secrets: GuessMatch
   };
   trav(triangulated);
   return paraState;
+}
+
+const countGuessesAndHints = (previousGuesses: GuessOrHint[]): { guesses: number, hints: number } => {
+  const ret = { guesses: 0, hints: 0 };
+  previousGuesses.forEach(gh => {
+    if (gh.type === "Guess") {
+      ret.guesses += 1;
+    } else {
+      ret.hints += 1;
+    }
+  });
+  return ret;
 }

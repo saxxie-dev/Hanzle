@@ -11,7 +11,7 @@ export const giveHint = (secretKnowledge: GuessMatches, publicKnowledge: Preview
       for (const pos of secretKnowledge[char].positions) {
         if (know.knownPositions.findIndex(positionEq(pos)) === -1) {
           know.knownPositions.push(pos);
-          return { type: "Hint", value: char, position: pos };
+          return { type: "Hint", value: secretKnowledge[char].version, position: pos };
         }
       }
     }

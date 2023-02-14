@@ -22,7 +22,7 @@ export default component$(() => {
     const { secret, secretKnowledge } = generateFreshGameState();
     store.secret = secret;
     store.secretKnowledge = secretKnowledge;
-    console.log(store.secret);
+    console.log(store.secret, store.secretKnowledge);
   });
 
 

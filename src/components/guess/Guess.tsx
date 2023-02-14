@@ -1,6 +1,8 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { SmallRadicalClass, SmallRadicals } from "~/logic/Radicals";
 import type { ColorizedIDS } from "~/logic/Scoring";
 import styles from './Guess.css?inline';
+import { ResultLeaf } from "./ResultLeaf";
 
 
 export type GuessProps = {
@@ -12,14 +14,14 @@ export const Guess = component$((props: GuessProps) => {
   const { w, h } = props.char.note.position;
   const dimStyle = `width: ${w}rem;
   height: ${h}rem;`;
-  const textStyle = `
-  line-height:${h}rem;
-  font-size: ${h * 0.95}rem;
-  transform: scaleX(${w / h});`;
 
   switch (props.char.type) {
     case 'Leaf':
-      return <div style={dimStyle} class={props.char.val.color}><span style={textStyle}>{props.char.val.char}</span></div>;
+      return <ResultLeaf
+        radical={props.char.val.char}
+        width={w}
+        height={h}
+        color={props.char.val.color} />;
     case '⿰':
     case '⿲':
       return <div class='Row' style={dimStyle}>
@@ -48,3 +50,4 @@ export const Guess = component$((props: GuessProps) => {
       </div>;
   }
 });
+
