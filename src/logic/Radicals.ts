@@ -92,4 +92,5 @@ export const SmallRadicals: Record<string, SmallRadicalClass> = {
   "𡗗": SmallRadicalClass.top,
   "耂": SmallRadicalClass.top,
   "𭕄": SmallRadicalClass.top,
+  "龰": SmallRadicalClass.bottom,
 };

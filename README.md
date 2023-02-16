@@ -1,12 +1,12 @@
-# Qwik City App ⚡️
+# HanZle : Chinese single-character wordle
+Try it at: [hanzle.saxxie.dev](hanzle.saxxie.dev)  
+There are plenty of "chinese wordle" clones out there. My complaint is that they adapt their orthography to the parameters of the game, rather than adapting the game to the orthography. That's probably the right decision - but how nice of a game can we get by reversing the direction? This repo intends to find out.
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-
----
+## Data
+We use a few datasources to extract rendering information. 
+* [Babelstone IDS sequences](https://www.babelstone.co.uk/CJK/IDS.TXT) Contains IDS sequences for (every? most?) unicode-encoded CJK characters, as well as a number of not-yet-encoded components. Only a small subset is used in this project.
+* [Unihan stroke counts](https://github.com/liao961120/strokes/blob/main/data/strokeCount.json) Contains the stroke counts for most chinese characters and components. Somewhat outdated. Only a small subset is included - we can re-hydrate stroke counts for most compound characters by summing all the component stroke counts.
+* [Table of General Standard Chinese Characters](https://github.com/jaywcjlove/table-of-general-standard-chinese-characters/blob/main/data/characters.json) Contains the standard chinese characters. Only table 1/3 - the most common characters - is used as a source for candidate characters.
 
 ## Project Structure
 

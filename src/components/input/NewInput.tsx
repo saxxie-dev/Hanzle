@@ -23,7 +23,6 @@ export default component$((props: InputProps) => {
   });
 
   return <div class="gridAdapter"><section>
-
     <Guess char={generateRenderableIDSPreview(props.guess, props.publicKnowledge)} />
     <div>
       <input
