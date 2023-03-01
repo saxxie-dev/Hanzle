@@ -8,7 +8,7 @@ import Footer from "../footer/Footer";
 import { Guess } from "../guess/Guess";
 import { Hint } from "../guess/Hint";
 import Header from "../header/Header";
-import NewInput from "../input/NewInput";
+import Input from "../input/Input";
 import { InstructionModal } from "../instruction-modal/InstructionModal";
 import styles from './App.css?inline';
 import { isServer } from '@builder.io/qwik/build';
@@ -59,15 +59,13 @@ export default component$(() => {
         }
       }
       )}
-      <NewInput
-        guess={store.pendingGuess}
+      <Input
+        key={store.previousGuesses.length}
         publicKnowledge={store.publicKnowledge}
-        setGuess$={$((g: string): void => { console.log(g); store.pendingGuess = g; })}
-        submit$={$(() => {
-          store.previousGuesses = [...store.previousGuesses, { type: "Guess", value: store.pendingGuess }];
-          store.publicKnowledge = updatePreviewMap(store.publicKnowledge, store.secretKnowledge, store.pendingGuess);
-          store.pendingGuess = "";
-          if (store.pendingGuess === store.secret) {
+        submit$={$((g: string) => {
+          store.previousGuesses = [...store.previousGuesses, { type: "Guess", value: g }];
+          store.publicKnowledge = updatePreviewMap(store.publicKnowledge, store.secretKnowledge, g);
+          if (g === store.secret) {
             alert("You did it");
           }
         })} />

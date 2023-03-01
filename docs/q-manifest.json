@@ -1,5 +1,15 @@
 {
   "symbols": {
+    "s_MZaIWlpOWhY": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component_div_section_div_input_onClick",
+      "canonicalFilename": "s_mzaiwlpowhy",
+      "hash": "MZaIWlpOWhY",
+      "ctxKind": "event",
+      "ctxName": "onClick$",
+      "captures": true,
+      "parent": "s_yr2tvSyXeyk"
+    },
     "s_W4mlHtkTubQ": {
       "origin": "components/instruction-modal/InstructionModal.tsx",
       "displayName": "InstructionModal_component_dialog_button_onClick",
@@ -40,25 +50,35 @@
       "captures": false,
       "parent": "s_8gdLBszqbaM"
     },
-    "s_IvN6ElSlrGU": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component_div_section_div_input_onKeyDown",
-      "canonicalFilename": "s_ivn6elslrgu",
-      "hash": "IvN6ElSlrGU",
+    "s_wKvFin0vJnk": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component_div_section_div_input_onKeyDown",
+      "canonicalFilename": "s_wkvfin0vjnk",
+      "hash": "wKvFin0vJnk",
       "ctxKind": "event",
       "ctxName": "onKeyDown$",
       "captures": true,
-      "parent": "s_YQdsVHwQ0UM"
+      "parent": "s_yr2tvSyXeyk"
     },
-    "s_8pU91PXhOU4": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component_div_section_div_input_onInput",
-      "canonicalFilename": "s_8pu91pxhou4",
-      "hash": "8pU91PXhOU4",
+    "s_tPoPX0WqPXs": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component_div_section_div_input_onKeyUp",
+      "canonicalFilename": "s_tpopx0wqpxs",
+      "hash": "tPoPX0WqPXs",
+      "ctxKind": "event",
+      "ctxName": "onKeyUp$",
+      "captures": true,
+      "parent": "s_yr2tvSyXeyk"
+    },
+    "s_ToSlMo8VbGU": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component_div_section_div_input_onInput",
+      "canonicalFilename": "s_toslmo8vbgu",
+      "hash": "ToSlMo8VbGU",
       "ctxKind": "event",
       "ctxName": "onInput$",
       "captures": true,
-      "parent": "s_YQdsVHwQ0UM"
+      "parent": "s_yr2tvSyXeyk"
     },
     "s_PrXIxv2vNXY": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -69,26 +89,6 @@
       "ctxName": "onFocus$",
       "captures": false,
       "parent": "s_8gdLBszqbaM"
-    },
-    "s_0iKD40RJ70w": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component_div_section_div_input_onCompositionStart",
-      "canonicalFilename": "s_0ikd40rj70w",
-      "hash": "0iKD40RJ70w",
-      "ctxKind": "event",
-      "ctxName": "onCompositionStart$",
-      "captures": true,
-      "parent": "s_YQdsVHwQ0UM"
-    },
-    "s_0zUhrsVF234": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component_div_section_div_input_onCompositionEnd",
-      "canonicalFilename": "s_0zuhrsvf234",
-      "hash": "0zUhrsVF234",
-      "ctxKind": "event",
-      "ctxName": "onCompositionEnd$",
-      "captures": true,
-      "parent": "s_YQdsVHwQ0UM"
     },
     "s_EpaZ5qQ4Lg4": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -240,16 +240,6 @@
       "captures": false,
       "parent": null
     },
-    "s_YQdsVHwQ0UM": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component",
-      "canonicalFilename": "s_yqdsvhwq0um",
-      "hash": "YQdsVHwQ0UM",
-      "ctxKind": "function",
-      "ctxName": "component$",
-      "captures": false,
-      "parent": null
-    },
     "s_oScHmv0Ywvc": {
       "origin": "components/guess/ResultLeaf.tsx",
       "displayName": "ResultLeaf_component",
@@ -280,6 +270,16 @@
       "captures": false,
       "parent": null
     },
+    "s_yr2tvSyXeyk": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component",
+      "canonicalFilename": "s_yr2tvsyxeyk",
+      "hash": "yr2tvSyXeyk",
+      "ctxKind": "function",
+      "ctxName": "component$",
+      "captures": false,
+      "parent": null
+    },
     "s_zrbrqoaqXSY": {
       "origin": "components/router-head/router-head.tsx",
       "displayName": "RouterHead_component",
@@ -299,16 +299,6 @@
       "ctxName": "useStyles$",
       "captures": false,
       "parent": "s_3sccYCDd1Z0"
-    },
-    "s_1VUK0O5qhpU": {
-      "origin": "components/input/NewInput.tsx",
-      "displayName": "NewInput_component_useStylesScoped",
-      "canonicalFilename": "s_1vuk0o5qhpu",
-      "hash": "1VUK0O5qhpU",
-      "ctxKind": "function",
-      "ctxName": "useStylesScoped$",
-      "captures": false,
-      "parent": "s_YQdsVHwQ0UM"
     },
     "s_4bsDzHMpDCw": {
       "origin": "components/header/Header.tsx",
@@ -360,6 +350,16 @@
       "captures": false,
       "parent": "s_oScHmv0Ywvc"
     },
+    "s_f7GZk8hxRkw": {
+      "origin": "components/input/Input.tsx",
+      "displayName": "Input_component_useStylesScoped",
+      "canonicalFilename": "s_f7gzk8hxrkw",
+      "hash": "f7GZk8hxRkw",
+      "ctxKind": "function",
+      "ctxName": "useStylesScoped$",
+      "captures": false,
+      "parent": "s_yr2tvSyXeyk"
+    },
     "s_qYPvjK6cETA": {
       "origin": "components/app/App.tsx",
       "displayName": "App_component_useStylesScoped",
@@ -400,21 +400,11 @@
       "captures": false,
       "parent": "s_WmYC5H00wtI"
     },
-    "s_JMnldB3L0RE": {
+    "s_BYMh6He0FGg": {
       "origin": "components/app/App.tsx",
-      "displayName": "App_component_div_section_NewInput_submit",
-      "canonicalFilename": "s_jmnldb3l0re",
-      "hash": "JMnldB3L0RE",
-      "ctxKind": "function",
-      "ctxName": "$",
-      "captures": true,
-      "parent": "s_WdUhBS0XXUQ"
-    },
-    "s_OvPJmui8SYk": {
-      "origin": "components/app/App.tsx",
-      "displayName": "App_component_div_section_NewInput_setGuess",
-      "canonicalFilename": "s_ovpjmui8syk",
-      "hash": "OvPJmui8SYk",
+      "displayName": "App_component_div_section_Input_submit",
+      "canonicalFilename": "s_bymh6he0fgg",
+      "hash": "BYMh6He0FGg",
       "ctxKind": "function",
       "ctxName": "$",
       "captures": true,
@@ -452,53 +442,87 @@
     }
   },
   "mapping": {
+    "s_MZaIWlpOWhY": "q-1b98b2e8.js",
     "s_W4mlHtkTubQ": "q-7cdf66a1.js",
-    "s_kzjavhDI3L0": "q-229e4250.js",
-    "s_lCbKql2dxAs": "q-6cfe1d74.js",
-    "s_yiXwCC0m3jY": "q-229e4250.js",
-    "s_IvN6ElSlrGU": "q-936617c4.js",
-    "s_8pU91PXhOU4": "q-936617c4.js",
-    "s_PrXIxv2vNXY": "q-229e4250.js",
-    "s_0iKD40RJ70w": "q-936617c4.js",
-    "s_0zUhrsVF234": "q-936617c4.js",
-    "s_EpaZ5qQ4Lg4": "q-229e4250.js",
-    "s_02wMImzEAbk": "q-0f14aacc.js",
-    "s_CTxdZpMz0Go": "q-6cfe1d74.js",
-    "s_p5SSKuAME80": "q-6cfe1d74.js",
+    "s_kzjavhDI3L0": "q-4a95b06d.js",
+    "s_lCbKql2dxAs": "q-0696cd32.js",
+    "s_yiXwCC0m3jY": "q-4a95b06d.js",
+    "s_wKvFin0vJnk": "q-1b98b2e8.js",
+    "s_tPoPX0WqPXs": "q-1b98b2e8.js",
+    "s_ToSlMo8VbGU": "q-1b98b2e8.js",
+    "s_PrXIxv2vNXY": "q-4a95b06d.js",
+    "s_EpaZ5qQ4Lg4": "q-4a95b06d.js",
+    "s_02wMImzEAbk": "q-019e82ac.js",
+    "s_CTxdZpMz0Go": "q-0696cd32.js",
+    "s_p5SSKuAME80": "q-0696cd32.js",
     "s_07HHjgzRHk8": "q-4e9400fd.js",
-    "s_3sccYCDd1Z0": "q-66f1fc00.js",
-    "s_8gdLBszqbaM": "q-229e4250.js",
-    "s_AKetNByE5TM": "q-0f335776.js",
-    "s_GDuk1C8ySrg": "q-e3125b99.js",
+    "s_3sccYCDd1Z0": "q-773eeaeb.js",
+    "s_8gdLBszqbaM": "q-4a95b06d.js",
+    "s_AKetNByE5TM": "q-301692c9.js",
+    "s_GDuk1C8ySrg": "q-8dd9bfb6.js",
     "s_MH2pE8nS8Fk": "q-0555bb2c.js",
-    "s_TbFW62RyZ54": "q-fd0762d2.js",
-    "s_TxCFOy819ag": "q-0f14aacc.js",
+    "s_TbFW62RyZ54": "q-cc428c0c.js",
+    "s_TxCFOy819ag": "q-019e82ac.js",
     "s_VkLNXphUh5s": "q-f266be56.js",
-    "s_WdUhBS0XXUQ": "q-6cfe1d74.js",
-    "s_WmYC5H00wtI": "q-381a7b5b.js",
-    "s_YQdsVHwQ0UM": "q-936617c4.js",
-    "s_oScHmv0Ywvc": "q-bb7e31bb.js",
+    "s_WdUhBS0XXUQ": "q-0696cd32.js",
+    "s_WmYC5H00wtI": "q-35930c5c.js",
+    "s_oScHmv0Ywvc": "q-49537d36.js",
     "s_uRwvpGiJ0BA": "q-7cdf66a1.js",
-    "s_xYL1qOwPyDI": "q-cb50f264.js",
-    "s_zrbrqoaqXSY": "q-6c2193d2.js",
-    "s_hO3b5j0m2ZI": "q-66f1fc00.js",
-    "s_1VUK0O5qhpU": "q-936617c4.js",
+    "s_xYL1qOwPyDI": "q-6a88199d.js",
+    "s_yr2tvSyXeyk": "q-1b98b2e8.js",
+    "s_zrbrqoaqXSY": "q-8719ae66.js",
+    "s_hO3b5j0m2ZI": "q-773eeaeb.js",
     "s_4bsDzHMpDCw": "q-4e9400fd.js",
-    "s_Bko770VTG28": "q-e3125b99.js",
-    "s_C3ThiTpEF2I": "q-fd0762d2.js",
+    "s_Bko770VTG28": "q-8dd9bfb6.js",
+    "s_C3ThiTpEF2I": "q-cc428c0c.js",
     "s_X4re1KclWQ4": "q-7cdf66a1.js",
-    "s_XeWpTynpJUE": "q-bb7e31bb.js",
-    "s_qYPvjK6cETA": "q-6cfe1d74.js",
+    "s_XeWpTynpJUE": "q-49537d36.js",
+    "s_f7GZk8hxRkw": "q-1b98b2e8.js",
+    "s_qYPvjK6cETA": "q-0696cd32.js",
     "s_zrinmuu9B68": "q-0555bb2c.js",
-    "s_5ciRQrFJaHQ": "q-6cfe1d74.js",
-    "s_BUbtvTyvVRE": "q-381a7b5b.js",
-    "s_JMnldB3L0RE": "q-6cfe1d74.js",
-    "s_OvPJmui8SYk": "q-6cfe1d74.js",
-    "s_fX0bDjeJa0E": "q-0f14aacc.js",
-    "s_u0YVoxt2aTY": "q-229e4250.js",
-    "s_yEfGrwb5w0w": "q-6cfe1d74.js"
+    "s_5ciRQrFJaHQ": "q-0696cd32.js",
+    "s_BUbtvTyvVRE": "q-35930c5c.js",
+    "s_BYMh6He0FGg": "q-0696cd32.js",
+    "s_fX0bDjeJa0E": "q-019e82ac.js",
+    "s_u0YVoxt2aTY": "q-4a95b06d.js",
+    "s_yEfGrwb5w0w": "q-0696cd32.js"
   },
   "bundles": {
+    "q-019e82ac.js": {
+      "size": 2400,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-b4420816.js"
+      ],
+      "dynamicImports": [
+        "q-0320e6fe.js",
+        "q-0f3fae40.js"
+      ],
+      "origins": [
+        "@qwik-city-plan",
+        "src/entry_QwikCityProvider.js",
+        "src/s_02wmimzeabk.js",
+        "src/s_fx0bdjeja0e.js",
+        "src/s_txcfoy819ag.js"
+      ],
+      "symbols": [
+        "s_02wMImzEAbk",
+        "s_fX0bDjeJa0E",
+        "s_TxCFOy819ag"
+      ]
+    },
+    "q-0320e6fe.js": {
+      "size": 322,
+      "imports": [
+        "q-b3c8209d.js"
+      ],
+      "dynamicImports": [
+        "q-6a88199d.js"
+      ],
+      "origins": [
+        "src/routes/index.tsx"
+      ]
+    },
     "q-0555bb2c.js": {
       "size": 1873,
       "imports": [
@@ -516,41 +540,57 @@
         "s_zrinmuu9B68"
       ]
     },
-    "q-0f14aacc.js": {
-      "size": 2399,
+    "q-0696cd32.js": {
+      "size": 81606,
       "imports": [
-        "q-b3c8209d.js",
-        "q-cfada55d.js"
+        "q-b3c8209d.js"
       ],
       "dynamicImports": [
-        "q-0f3fae40.js",
-        "q-f26e8ab3.js"
+        "q-0555bb2c.js",
+        "q-1b98b2e8.js",
+        "q-4e9400fd.js",
+        "q-7cdf66a1.js",
+        "q-8dd9bfb6.js",
+        "q-cc428c0c.js"
       ],
       "origins": [
-        "@qwik-city-plan",
-        "src/entry_QwikCityProvider.js",
-        "src/s_02wmimzeabk.js",
-        "src/s_fx0bdjeja0e.js",
-        "src/s_txcfoy819ag.js"
+        "data/candidates.json",
+        "data/ids.json",
+        "data/strokecounts.json",
+        "src/components/app/App.css?used&inline",
+        "src/components/footer/Footer.tsx",
+        "src/components/guess/Guess.tsx",
+        "src/components/guess/Hint.tsx",
+        "src/components/header/Header.tsx",
+        "src/components/input/Input.tsx",
+        "src/components/instruction-modal/InstructionModal.tsx",
+        "src/entry_App.js",
+        "src/logic/Data.ts",
+        "src/logic/GameState.ts",
+        "src/logic/Hints.ts",
+        "src/logic/IDS.ts",
+        "src/logic/Parser.ts",
+        "src/logic/Radicals.ts",
+        "src/logic/Scoring.ts",
+        "src/prelude.ts",
+        "src/s_5cirqrfjahq.js",
+        "src/s_bymh6he0fgg.js",
+        "src/s_ctxdzpmz0go.js",
+        "src/s_lcbkql2dxas.js",
+        "src/s_p5sskuame80.js",
+        "src/s_qypvjk6ceta.js",
+        "src/s_wduhbs0xxuq.js",
+        "src/s_yefgrwb5w0w.js"
       ],
       "symbols": [
-        "s_02wMImzEAbk",
-        "s_fX0bDjeJa0E",
-        "s_TxCFOy819ag"
-      ]
-    },
-    "q-0f335776.js": {
-      "size": 308,
-      "imports": [
-        "q-b3c8209d.js",
-        "q-cfada55d.js"
-      ],
-      "origins": [
-        "src/entry_RouterOutlet.js",
-        "src/s_aketnbye5tm.js"
-      ],
-      "symbols": [
-        "s_AKetNByE5TM"
+        "s_5ciRQrFJaHQ",
+        "s_BYMh6He0FGg",
+        "s_CTxdZpMz0Go",
+        "s_lCbKql2dxAs",
+        "s_p5SSKuAME80",
+        "s_qYPvjK6cETA",
+        "s_WdUhBS0XXUQ",
+        "s_yEfGrwb5w0w"
       ]
     },
     "q-0f3fae40.js": {
@@ -565,11 +605,83 @@
         "src/routes/layout.tsx"
       ]
     },
-    "q-229e4250.js": {
+    "q-1b98b2e8.js": {
+      "size": 2854,
+      "imports": [
+        "q-0696cd32.js",
+        "q-b3c8209d.js"
+      ],
+      "origins": [
+        "src/components/input/Input.css?used&inline",
+        "src/entry_Input.js",
+        "src/s_f7gzk8hxrkw.js",
+        "src/s_mzaiwlpowhy.js",
+        "src/s_toslmo8vbgu.js",
+        "src/s_tpopx0wqpxs.js",
+        "src/s_wkvfin0vjnk.js",
+        "src/s_yr2tvsyxeyk.js"
+      ],
+      "symbols": [
+        "s_f7GZk8hxRkw",
+        "s_MZaIWlpOWhY",
+        "s_ToSlMo8VbGU",
+        "s_tPoPX0WqPXs",
+        "s_wKvFin0vJnk",
+        "s_yr2tvSyXeyk"
+      ]
+    },
+    "q-301692c9.js": {
+      "size": 308,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-b4420816.js"
+      ],
+      "origins": [
+        "src/entry_RouterOutlet.js",
+        "src/s_aketnbye5tm.js"
+      ],
+      "symbols": [
+        "s_AKetNByE5TM"
+      ]
+    },
+    "q-35930c5c.js": {
+      "size": 728,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-b4420816.js"
+      ],
+      "origins": [
+        "src/entry_QwikCityMockProvider.js",
+        "src/s_bubtvtyvvre.js",
+        "src/s_wmyc5h00wti.js"
+      ],
+      "symbols": [
+        "s_BUbtvTyvVRE",
+        "s_WmYC5H00wtI"
+      ]
+    },
+    "q-49537d36.js": {
+      "size": 1542,
+      "imports": [
+        "q-0696cd32.js",
+        "q-4be7d9d3.js",
+        "q-b3c8209d.js"
+      ],
+      "origins": [
+        "src/entry_ResultLeaf.js",
+        "src/s_oschmv0ywvc.js",
+        "src/s_xewptynpjue.js"
+      ],
+      "symbols": [
+        "s_oScHmv0Ywvc",
+        "s_XeWpTynpJUE"
+      ]
+    },
+    "q-4a95b06d.js": {
       "size": 1242,
       "imports": [
         "q-b3c8209d.js",
-        "q-cfada55d.js"
+        "q-b4420816.js"
       ],
       "origins": [
         "src/entry_Link.js",
@@ -589,20 +701,10 @@
         "s_yiXwCC0m3jY"
       ]
     },
-    "q-381a7b5b.js": {
-      "size": 728,
-      "imports": [
-        "q-b3c8209d.js",
-        "q-cfada55d.js"
-      ],
+    "q-4be7d9d3.js": {
+      "size": 610,
       "origins": [
-        "src/entry_QwikCityMockProvider.js",
-        "src/s_bubtvtyvvre.js",
-        "src/s_wmyc5h00wti.js"
-      ],
-      "symbols": [
-        "s_BUbtvTyvVRE",
-        "s_WmYC5H00wtI"
+        "src/components/guess/Guess.css?used&inline"
       ]
     },
     "q-4e9400fd.js": {
@@ -621,14 +723,31 @@
         "s_4bsDzHMpDCw"
       ]
     },
-    "q-66f1fc00.js": {
+    "q-6a88199d.js": {
+      "size": 232,
+      "imports": [
+        "q-b3c8209d.js"
+      ],
+      "dynamicImports": [
+        "q-0696cd32.js"
+      ],
+      "origins": [
+        "src/components/app/App.tsx",
+        "src/entry_routes.js",
+        "src/s_xyl1qowpydi.js"
+      ],
+      "symbols": [
+        "s_xYL1qOwPyDI"
+      ]
+    },
+    "q-773eeaeb.js": {
       "size": 955,
       "imports": [
         "q-b3c8209d.js",
-        "q-cfada55d.js"
+        "q-b4420816.js"
       ],
       "dynamicImports": [
-        "q-6c2193d2.js"
+        "q-8719ae66.js"
       ],
       "origins": [
         "src/components/router-head/router-head.tsx",
@@ -640,87 +759,6 @@
       "symbols": [
         "s_3sccYCDd1Z0",
         "s_hO3b5j0m2ZI"
-      ]
-    },
-    "q-6c2193d2.js": {
-      "size": 660,
-      "imports": [
-        "q-b3c8209d.js",
-        "q-cfada55d.js"
-      ],
-      "origins": [
-        "src/entry_RouterHead.js",
-        "src/s_zrbrqoaqxsy.js"
-      ],
-      "symbols": [
-        "s_zrbrqoaqXSY"
-      ]
-    },
-    "q-6cfe1d74.js": {
-      "size": 81546,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-0555bb2c.js",
-        "q-4e9400fd.js",
-        "q-7cdf66a1.js",
-        "q-936617c4.js",
-        "q-e3125b99.js",
-        "q-fd0762d2.js"
-      ],
-      "origins": [
-        "data/candidates.json",
-        "data/ids.json",
-        "data/strokecounts.json",
-        "src/components/app/App.css?used&inline",
-        "src/components/footer/Footer.tsx",
-        "src/components/guess/Guess.tsx",
-        "src/components/guess/Hint.tsx",
-        "src/components/header/Header.tsx",
-        "src/components/input/NewInput.tsx",
-        "src/components/instruction-modal/InstructionModal.tsx",
-        "src/entry_App.js",
-        "src/logic/Data.ts",
-        "src/logic/GameState.ts",
-        "src/logic/Hints.ts",
-        "src/logic/IDS.ts",
-        "src/logic/Parser.ts",
-        "src/logic/Radicals.ts",
-        "src/logic/Scoring.ts",
-        "src/prelude.ts",
-        "src/s_5cirqrfjahq.js",
-        "src/s_ctxdzpmz0go.js",
-        "src/s_jmnldb3l0re.js",
-        "src/s_lcbkql2dxas.js",
-        "src/s_ovpjmui8syk.js",
-        "src/s_p5sskuame80.js",
-        "src/s_qypvjk6ceta.js",
-        "src/s_wduhbs0xxuq.js",
-        "src/s_yefgrwb5w0w.js"
-      ],
-      "symbols": [
-        "s_5ciRQrFJaHQ",
-        "s_CTxdZpMz0Go",
-        "s_JMnldB3L0RE",
-        "s_lCbKql2dxAs",
-        "s_OvPJmui8SYk",
-        "s_p5SSKuAME80",
-        "s_qYPvjK6cETA",
-        "s_WdUhBS0XXUQ",
-        "s_yEfGrwb5w0w"
-      ]
-    },
-    "q-73f05e06.js": {
-      "size": 207,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-66f1fc00.js"
-      ],
-      "origins": [
-        "src/root.tsx"
       ]
     },
     "q-7cdf66a1.js": {
@@ -741,93 +779,25 @@
         "s_X4re1KclWQ4"
       ]
     },
-    "q-936617c4.js": {
-      "size": 2277,
+    "q-8719ae66.js": {
+      "size": 660,
       "imports": [
-        "q-6cfe1d74.js",
-        "q-b3c8209d.js"
-      ],
-      "origins": [
-        "src/components/input/NewInput.css?used&inline",
-        "src/entry_NewInput.js",
-        "src/s_0ikd40rj70w.js",
-        "src/s_0zuhrsvf234.js",
-        "src/s_1vuk0o5qhpu.js",
-        "src/s_8pu91pxhou4.js",
-        "src/s_ivn6elslrgu.js",
-        "src/s_yqdsvhwq0um.js"
-      ],
-      "symbols": [
-        "s_0iKD40RJ70w",
-        "s_0zUhrsVF234",
-        "s_1VUK0O5qhpU",
-        "s_8pU91PXhOU4",
-        "s_IvN6ElSlrGU",
-        "s_YQdsVHwQ0UM"
-      ]
-    },
-    "q-b3c8209d.js": {
-      "size": 45728,
-      "origins": [
-        "\u0000vite/preload-helper",
-        "node_modules/@builder.io/qwik/core.min.mjs"
-      ]
-    },
-    "q-bb7e31bb.js": {
-      "size": 1542,
-      "imports": [
-        "q-6cfe1d74.js",
         "q-b3c8209d.js",
-        "q-ecbfba08.js"
+        "q-b4420816.js"
       ],
       "origins": [
-        "src/entry_ResultLeaf.js",
-        "src/s_oschmv0ywvc.js",
-        "src/s_xewptynpjue.js"
+        "src/entry_RouterHead.js",
+        "src/s_zrbrqoaqxsy.js"
       ],
       "symbols": [
-        "s_oScHmv0Ywvc",
-        "s_XeWpTynpJUE"
+        "s_zrbrqoaqXSY"
       ]
     },
-    "q-cb50f264.js": {
-      "size": 232,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-6cfe1d74.js"
-      ],
-      "origins": [
-        "src/components/app/App.tsx",
-        "src/entry_routes.js",
-        "src/s_xyl1qowpydi.js"
-      ],
-      "symbols": [
-        "s_xYL1qOwPyDI"
-      ]
-    },
-    "q-cfada55d.js": {
-      "size": 5366,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-0f14aacc.js",
-        "q-0f335776.js",
-        "q-229e4250.js",
-        "q-381a7b5b.js"
-      ],
-      "origins": [
-        "@qwik-city-sw-register",
-        "node_modules/@builder.io/qwik-city/index.qwik.mjs"
-      ]
-    },
-    "q-e3125b99.js": {
+    "q-8dd9bfb6.js": {
       "size": 708,
       "imports": [
-        "q-b3c8209d.js",
-        "q-ecbfba08.js"
+        "q-4be7d9d3.js",
+        "q-b3c8209d.js"
       ],
       "origins": [
         "src/entry_Hint.js",
@@ -839,10 +809,60 @@
         "s_GDuk1C8ySrg"
       ]
     },
-    "q-ecbfba08.js": {
-      "size": 594,
+    "q-a0581201.js": {
+      "size": 207,
+      "imports": [
+        "q-b3c8209d.js"
+      ],
+      "dynamicImports": [
+        "q-773eeaeb.js"
+      ],
       "origins": [
-        "src/components/guess/Guess.css?used&inline"
+        "src/root.tsx"
+      ]
+    },
+    "q-b3c8209d.js": {
+      "size": 45728,
+      "origins": [
+        "\u0000vite/preload-helper",
+        "node_modules/@builder.io/qwik/core.min.mjs"
+      ]
+    },
+    "q-b4420816.js": {
+      "size": 5366,
+      "imports": [
+        "q-b3c8209d.js"
+      ],
+      "dynamicImports": [
+        "q-019e82ac.js",
+        "q-301692c9.js",
+        "q-35930c5c.js",
+        "q-4a95b06d.js"
+      ],
+      "origins": [
+        "@qwik-city-sw-register",
+        "node_modules/@builder.io/qwik-city/index.qwik.mjs"
+      ]
+    },
+    "q-cc428c0c.js": {
+      "size": 1454,
+      "imports": [
+        "q-0696cd32.js",
+        "q-4be7d9d3.js",
+        "q-b3c8209d.js"
+      ],
+      "dynamicImports": [
+        "q-49537d36.js"
+      ],
+      "origins": [
+        "src/components/guess/ResultLeaf.tsx",
+        "src/entry_Guess.js",
+        "src/s_c3thitpef2i.js",
+        "src/s_tbfw62ryz54.js"
+      ],
+      "symbols": [
+        "s_C3ThiTpEF2I",
+        "s_TbFW62RyZ54"
       ]
     },
     "q-f266be56.js": {
@@ -856,39 +876,6 @@
       ],
       "symbols": [
         "s_VkLNXphUh5s"
-      ]
-    },
-    "q-f26e8ab3.js": {
-      "size": 322,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-cb50f264.js"
-      ],
-      "origins": [
-        "src/routes/index.tsx"
-      ]
-    },
-    "q-fd0762d2.js": {
-      "size": 1454,
-      "imports": [
-        "q-6cfe1d74.js",
-        "q-b3c8209d.js",
-        "q-ecbfba08.js"
-      ],
-      "dynamicImports": [
-        "q-bb7e31bb.js"
-      ],
-      "origins": [
-        "src/components/guess/ResultLeaf.tsx",
-        "src/entry_Guess.js",
-        "src/s_c3thitpef2i.js",
-        "src/s_tbfw62ryz54.js"
-      ],
-      "symbols": [
-        "s_C3ThiTpEF2I",
-        "s_TbFW62RyZ54"
       ]
     }
   },
