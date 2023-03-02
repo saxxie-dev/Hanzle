@@ -5,7 +5,12 @@ import { generateRenderableIDSPreview } from "~/logic/Scoring";
 import { Guess } from "../guess/Guess";
 import styles from './Input.css?inline';
 
-type State = { value: string, caretPosition: number, caretMomentum: 'left' | 'right' };
+type State = {
+  value: string,
+  caretPosition: number,
+  caretMomentum: 'left' | 'right',
+  error?: 'invalidSubmit'
+};
 
 type InputProps = {
   submit$: PropFunction<(s: string) => void>;
@@ -22,7 +27,7 @@ export default component$((props: InputProps) => {
 
   const renderedGuess: string | undefined = getRenderedGuess(store.value, store.caretPosition, store.caretMomentum);
   return <div class="gridAdapter">
-    <section>
+    <section class={store.error ? "error" : ""}>
       <div class={renderedGuess ? "show" : "hide"}>
         {renderedGuess && <Guess char={generateRenderableIDSPreview(renderedGuess, props.publicKnowledge)} />}
       </div>
@@ -53,7 +58,14 @@ export default component$((props: InputProps) => {
             }
           }}
           onKeyDown$={async (e) => {
-            if (e.key === "Enter" && renderedGuess) { await props.submit$(renderedGuess); }
+            if (e.key === "Enter") {
+              if (renderedGuess) { await props.submit$(renderedGuess); }
+              else {
+                store.error = 'invalidSubmit';
+              }
+            } else {
+              store.error = undefined;
+            }
           }}
           onClick$={(e) => {
             const el: HTMLInputElement = e.target as any;
@@ -67,6 +79,9 @@ export default component$((props: InputProps) => {
             }
           }} />
       </div>
+      {store.error && <div class="errorDetails">
+        Not a chinese character...
+      </div>}
     </section>
   </div>;
 

@@ -9,6 +9,26 @@ section {
   font-family: 'Noto Serif SC', 'Times New Roman', serif;
 }
 
+section.error {
+  outline: 2px solid red;
+}
+
+section.error:focus-within {
+  outline: 2px solid red;
+  box-shadow: 0px 0px 10px red
+}
+
+.errorDetails {
+  position: absolute;
+  color: white;
+  background-color: red;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2px;
+}
+
 section:focus-within {
   outline: 3px auto Highlight;
   outline: 3px auto -webkit-focus-ring-color;
