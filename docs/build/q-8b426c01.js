@@ -1,6 +1,0 @@
-import{V as s,U as t,_ as r,Y as o,I as e}from"./q-b3c8209d.js";import{R as a,S as i,Q as n}from"./q-d53566f0.js";const l=`body{background-color:#fafafa;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;margin:0}html{font-size:.75em}
-`,c=l,_=s(t(()=>r(()=>import("./q-43566599.js"),["build/q-43566599.js","build/q-b3c8209d.js","build/q-d53566f0.js"]),"s_zrbrqoaqXSY")),g=()=>(o(t(()=>r(()=>Promise.resolve().then(()=>m),void 0),"s_hO3b5j0m2ZI")),e(n,{children:[e("head",{children:[e("meta",{charSet:"utf-8"}),e("link",{rel:"manifest",href:"/manifest.json"}),e("link",{rel:"stylesheet",href:"https://fonts.googleapis.com/css?family=Noto+Serif+SC:wght@400;700"}),e(_,{},"35_0")]}),e("body",{lang:"en",children:[e("script",{async:!0,src:"https://www.googletagmanager.com/gtag/js?id=G-M7CNEL72LW"}),e("script",{children:`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-M7CNEL72LW');`}),e(a,{},"35_1"),e(i,{},"35_2")]})]},"35_3")),m=Object.freeze(Object.defineProperty({__proto__:null,s_3sccYCDd1Z0:g,s_hO3b5j0m2ZI:c},Symbol.toStringTag,{value:"Module"}));export{g as s_3sccYCDd1Z0,c as s_hO3b5j0m2ZI};

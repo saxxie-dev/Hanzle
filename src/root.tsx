@@ -23,14 +23,6 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en">
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7CNEL72LW"></script>
-        <script>
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-M7CNEL72LW');`}
-        </script>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

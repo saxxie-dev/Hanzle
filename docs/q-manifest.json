@@ -456,7 +456,7 @@
     "s_CTxdZpMz0Go": "q-08eb6644.js",
     "s_p5SSKuAME80": "q-08eb6644.js",
     "s_07HHjgzRHk8": "q-4e9400fd.js",
-    "s_3sccYCDd1Z0": "q-8b426c01.js",
+    "s_3sccYCDd1Z0": "q-0dd4cd0c.js",
     "s_8gdLBszqbaM": "q-7a568814.js",
     "s_AKetNByE5TM": "q-78ff0cd6.js",
     "s_GDuk1C8ySrg": "q-8dd9bfb6.js",
@@ -470,8 +470,8 @@
     "s_uRwvpGiJ0BA": "q-7cdf66a1.js",
     "s_xYL1qOwPyDI": "q-a8919677.js",
     "s_yr2tvSyXeyk": "q-612e60c9.js",
-    "s_zrbrqoaqXSY": "q-43566599.js",
-    "s_hO3b5j0m2ZI": "q-8b426c01.js",
+    "s_zrbrqoaqXSY": "q-c3b37058.js",
+    "s_hO3b5j0m2ZI": "q-0dd4cd0c.js",
     "s_4bsDzHMpDCw": "q-4e9400fd.js",
     "s_Bko770VTG28": "q-8dd9bfb6.js",
     "s_C3ThiTpEF2I": "q-15358726.js",
@@ -558,6 +558,27 @@
         "s_yEfGrwb5w0w"
       ]
     },
+    "q-0dd4cd0c.js": {
+      "size": 955,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-d53566f0.js"
+      ],
+      "dynamicImports": [
+        "q-c3b37058.js"
+      ],
+      "origins": [
+        "src/components/router-head/router-head.tsx",
+        "src/entry_root.js",
+        "src/global.css?used&inline",
+        "src/s_3sccycdd1z0.js",
+        "src/s_ho3b5j0m2zi.js"
+      ],
+      "symbols": [
+        "s_3sccYCDd1Z0",
+        "s_hO3b5j0m2ZI"
+      ]
+    },
     "q-0f3fae40.js": {
       "size": 185,
       "imports": [
@@ -589,20 +610,6 @@
       "symbols": [
         "s_C3ThiTpEF2I",
         "s_TbFW62RyZ54"
-      ]
-    },
-    "q-43566599.js": {
-      "size": 660,
-      "imports": [
-        "q-b3c8209d.js",
-        "q-d53566f0.js"
-      ],
-      "origins": [
-        "src/entry_RouterHead.js",
-        "src/s_zrbrqoaqxsy.js"
-      ],
-      "symbols": [
-        "s_zrbrqoaqXSY"
       ]
     },
     "q-4be7d9d3.js": {
@@ -650,18 +657,6 @@
         "s_tPoPX0WqPXs",
         "s_wKvFin0vJnk",
         "s_yr2tvSyXeyk"
-      ]
-    },
-    "q-6d837378.js": {
-      "size": 207,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-8b426c01.js"
-      ],
-      "origins": [
-        "src/root.tsx"
       ]
     },
     "q-78ff0cd6.js": {
@@ -720,25 +715,16 @@
         "s_X4re1KclWQ4"
       ]
     },
-    "q-8b426c01.js": {
-      "size": 1240,
+    "q-7e822fb7.js": {
+      "size": 207,
       "imports": [
-        "q-b3c8209d.js",
-        "q-d53566f0.js"
+        "q-b3c8209d.js"
       ],
       "dynamicImports": [
-        "q-43566599.js"
+        "q-0dd4cd0c.js"
       ],
       "origins": [
-        "src/components/router-head/router-head.tsx",
-        "src/entry_root.js",
-        "src/global.css?used&inline",
-        "src/s_3sccycdd1z0.js",
-        "src/s_ho3b5j0m2zi.js"
-      ],
-      "symbols": [
-        "s_3sccYCDd1Z0",
-        "s_hO3b5j0m2ZI"
+        "src/root.tsx"
       ]
     },
     "q-8dd9bfb6.js": {
@@ -791,6 +777,20 @@
       "origins": [
         "\u0000vite/preload-helper",
         "node_modules/@builder.io/qwik/core.min.mjs"
+      ]
+    },
+    "q-c3b37058.js": {
+      "size": 945,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-d53566f0.js"
+      ],
+      "origins": [
+        "src/entry_RouterHead.js",
+        "src/s_zrbrqoaqxsy.js"
+      ],
+      "symbols": [
+        "s_zrbrqoaqXSY"
       ]
     },
     "q-d53566f0.js": {
