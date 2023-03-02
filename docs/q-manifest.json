@@ -456,7 +456,7 @@
     "s_CTxdZpMz0Go": "q-08eb6644.js",
     "s_p5SSKuAME80": "q-08eb6644.js",
     "s_07HHjgzRHk8": "q-4e9400fd.js",
-    "s_3sccYCDd1Z0": "q-7612e522.js",
+    "s_3sccYCDd1Z0": "q-8b426c01.js",
     "s_8gdLBszqbaM": "q-7a568814.js",
     "s_AKetNByE5TM": "q-78ff0cd6.js",
     "s_GDuk1C8ySrg": "q-8dd9bfb6.js",
@@ -471,7 +471,7 @@
     "s_xYL1qOwPyDI": "q-a8919677.js",
     "s_yr2tvSyXeyk": "q-612e60c9.js",
     "s_zrbrqoaqXSY": "q-43566599.js",
-    "s_hO3b5j0m2ZI": "q-7612e522.js",
+    "s_hO3b5j0m2ZI": "q-8b426c01.js",
     "s_4bsDzHMpDCw": "q-4e9400fd.js",
     "s_Bko770VTG28": "q-8dd9bfb6.js",
     "s_C3ThiTpEF2I": "q-15358726.js",
@@ -503,18 +503,6 @@
       "symbols": [
         "s_MH2pE8nS8Fk",
         "s_zrinmuu9B68"
-      ]
-    },
-    "q-06f043e4.js": {
-      "size": 207,
-      "imports": [
-        "q-b3c8209d.js"
-      ],
-      "dynamicImports": [
-        "q-7612e522.js"
-      ],
-      "origins": [
-        "src/root.tsx"
       ]
     },
     "q-08eb6644.js": {
@@ -664,25 +652,16 @@
         "s_yr2tvSyXeyk"
       ]
     },
-    "q-7612e522.js": {
-      "size": 1240,
+    "q-6d837378.js": {
+      "size": 207,
       "imports": [
-        "q-b3c8209d.js",
-        "q-d53566f0.js"
+        "q-b3c8209d.js"
       ],
       "dynamicImports": [
-        "q-43566599.js"
+        "q-8b426c01.js"
       ],
       "origins": [
-        "src/components/router-head/router-head.tsx",
-        "src/entry_root.js",
-        "src/global.css?used&inline",
-        "src/s_3sccycdd1z0.js",
-        "src/s_ho3b5j0m2zi.js"
-      ],
-      "symbols": [
-        "s_3sccYCDd1Z0",
-        "s_hO3b5j0m2ZI"
+        "src/root.tsx"
       ]
     },
     "q-78ff0cd6.js": {
@@ -739,6 +718,27 @@
         "s_uRwvpGiJ0BA",
         "s_W4mlHtkTubQ",
         "s_X4re1KclWQ4"
+      ]
+    },
+    "q-8b426c01.js": {
+      "size": 1240,
+      "imports": [
+        "q-b3c8209d.js",
+        "q-d53566f0.js"
+      ],
+      "dynamicImports": [
+        "q-43566599.js"
+      ],
+      "origins": [
+        "src/components/router-head/router-head.tsx",
+        "src/entry_root.js",
+        "src/global.css?used&inline",
+        "src/s_3sccycdd1z0.js",
+        "src/s_ho3b5j0m2zi.js"
+      ],
+      "symbols": [
+        "s_3sccYCDd1Z0",
+        "s_hO3b5j0m2ZI"
       ]
     },
     "q-8dd9bfb6.js": {

@@ -17,6 +17,12 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:wght@400;700" />
+        <RouterHead />
+      </head>
+      <body lang="en">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7CNEL72LW"></script>
         <script>
           {`window.dataLayer = window.dataLayer || [];
@@ -25,12 +31,6 @@ export default component$(() => {
 
           gtag('config', 'G-M7CNEL72LW');`}
         </script>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:wght@400;700" />
-        <RouterHead />
-      </head>
-      <body lang="en">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
