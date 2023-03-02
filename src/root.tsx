@@ -17,6 +17,14 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7CNEL72LW"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-M7CNEL72LW');`}
+        </script>
         <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:wght@400;700" />
