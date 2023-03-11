@@ -60,7 +60,6 @@ export default component$(() => {
       }
       )}
       <Input
-        key={store.previousGuesses.length}
         publicKnowledge={store.publicKnowledge}
         submit$={$((g: string) => {
           store.previousGuesses = [...store.previousGuesses, { type: "Guess", value: g }];

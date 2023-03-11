@@ -1,10 +1,47 @@
 dialog {
   background-color: rgb(250, 250, 250);
   padding: 3rem;
+  padding-bottom: 1.5rem;
   border-radius: 1rem;
   border: 1px solid #EEE;
   width: calc(500px - 2 * 3rem - 2px);
   margin: auto;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+li {
+  padding-top: 0.5em;
+}
+
+.tinyGuess {
+  transform: scale(0.3, 0.3);
+  transform-origin: top left;
+  margin-bottom: -9rem;
+  margin-right: -7rem;
+  padding: 4px;
+  border: 2px solid #AAA;
+  border-radius: 0.3rem;
+}
+
+.guessExplanation {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 dialog::backdrop {
@@ -16,4 +53,26 @@ dialog::backdrop {
     border-radius: 0px;
     width: 100%;
   }
+}
+
+button {
+  all: unset;
+  background-color: #6aaa64;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  border: 2px solid #7aba74;
+  box-shadow: 2px 2px 5px #7aba74;
+
+  float: right;
+  font-family: 'Noto Serif SC', 'Times New Roman', serif;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+button:hover {
+  background-color: 2px 2px 5px #7aba74;
+  border: 2px solid #8aca84;
+  box-shadow: 2px 2px 5px #8aca84;
 }

@@ -1,4 +1,4 @@
-import { PropFunction } from "@builder.io/qwik";
+import { PropFunction, useBrowserVisibleTask$ } from "@builder.io/qwik";
 import { component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
 import type { PreviewMatches } from "~/logic/Scoring";
 import { generateRenderableIDSPreview } from "~/logic/Scoring";
@@ -25,6 +25,8 @@ export default component$((props: InputProps) => {
     caretMomentum: 'right',
   });
 
+  // useBrowserVisibleTask$()
+
   const renderedGuess: string | undefined = getRenderedGuess(store.value, store.caretPosition, store.caretMomentum);
   return <div class="gridAdapter">
     <section class={store.error ? "error" : ""}>
@@ -35,12 +37,14 @@ export default component$((props: InputProps) => {
         <input
           class={renderedGuess ? "char" : "text"}
           type="text"
+          value={store.value}
           autoFocus={true}
           onInput$={(e: InputEvent) => {
             const el: HTMLInputElement = e.target as any;
             store.caretPosition = el.selectionStart ?? store.caretPosition;
             store.caretMomentum = 'right';
             store.value = el.value;
+            store.error = undefined;
 
             if (!renderedGuess && getRenderedGuess(store.value, store.caretPosition, store.caretMomentum)) {
               centerSelectionDuringZoom(el, store.caretMomentum, store.caretPosition);
@@ -59,7 +63,13 @@ export default component$((props: InputProps) => {
           }}
           onKeyDown$={async (e) => {
             if (e.key === "Enter") {
-              if (renderedGuess) { await props.submit$(renderedGuess); }
+              if (renderedGuess) {
+                await props.submit$(renderedGuess);
+                store.value = "";
+                store.caretPosition = 0;
+                store.caretMomentum = 'right';
+                store.error = undefined;
+              }
               else {
                 store.error = 'invalidSubmit';
               }
@@ -71,6 +81,7 @@ export default component$((props: InputProps) => {
             const el: HTMLInputElement = e.target as any;
             const oldCaretPosition = store.caretPosition;
             store.caretPosition = el.selectionStart ?? store.caretPosition;
+            store.error = undefined;
             if (store.caretPosition < oldCaretPosition) { store.caretMomentum = 'left'; }
             else if (store.caretPosition > oldCaretPosition) { store.caretMomentum = 'right'; }
 

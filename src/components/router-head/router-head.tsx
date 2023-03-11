@@ -29,13 +29,11 @@ export const RouterHead = component$(() => {
       ))}
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7CNEL72LW"></script>
-      <script>
-        {`window.dataLayer = window.dataLayer || [];
+      <script dangerouslySetInnerHTML={`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-M7CNEL72LW');`}
-      </script>
+          gtag('config', 'G-M7CNEL72LW');`} />
     </>
   );
 });

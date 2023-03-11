@@ -1,4 +1,4 @@
-import{s as l}from"./q-4be7d9d3.js";import{e as n,U as c,_ as g,I as r,K as i,a as m}from"./q-b3c8209d.js";import{S as h,b as t}from"./q-08eb6644.js";const d=l,f=s=>{n(c(()=>g(()=>Promise.resolve().then(()=>$),void 0),"s_XeWpTynpJUE"));const e=s,a=`width: ${e.width}rem;
+import{s as l}from"./q-4be7d9d3.js";import{e as n,U as c,_ as g,I as r,K as i,a as m}from"./q-b3c8209d.js";import{S as h,a as t}from"./q-4c78c16d.js";const d=l,f=s=>{n(c(()=>g(()=>Promise.resolve().then(()=>$),void 0),"s_XeWpTynpJUE"));const e=s,a=`width: ${e.width}rem;
   height: ${e.height}rem;
   ${h[e.radical]===t.right?"direction: rtl;":""}`;return r("div",{style:a,get class(){return e.color},children:r("span",{style:(o=>{switch(h[o]){case void 0:return`
         line-height:${e.height}rem;
