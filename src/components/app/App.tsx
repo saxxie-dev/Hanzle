@@ -12,6 +12,7 @@ import Input from "../input/Input";
 import { InstructionModal } from "../instruction-modal/InstructionModal";
 import styles from './App.css?inline';
 import { isServer } from '@builder.io/qwik/build';
+import { CompletionModal } from "../completion-modal/CompletionModal";
 
 
 export const defaultPositions: Position = { x: 0, y: 0, h: 12, w: 12 };
@@ -36,14 +37,25 @@ export default component$(() => {
     console.log("Solution: ", store.secret);
   });
 
-  const instructionDialogRef = useSignal<HTMLDialogElement | undefined>();
   useBrowserVisibleTask$(({ track }) => {
-    track(() => currentView.value === 'instruction');
+    track(() => store.previousGuesses.length > 0 && store.previousGuesses[store.previousGuesses.length - 1].value === store.secret);
+    if (store.previousGuesses.length > 0 && store.previousGuesses[store.previousGuesses.length - 1].value === store.secret) {
+      currentView.value = 'completed';
+    }
+  });
+
+  const instructionDialogRef = useSignal<HTMLDialogElement | undefined>();
+  const completionDialogRef = useSignal<HTMLDialogElement | undefined>();
+  useBrowserVisibleTask$(({ track }) => {
+    track(() => currentView.value);
     if (!instructionDialogRef.value) { return; }
     if (currentView.value === 'instruction') {
       (instructionDialogRef.value as HTMLDialogElement).showModal();
+    } else if (currentView.value === 'completed') {
+      (completionDialogRef.value as HTMLDialogElement).showModal();
     } else {
       (instructionDialogRef.value as HTMLDialogElement).close();
+      (completionDialogRef.value as HTMLDialogElement).close();
     }
   });
 
@@ -64,9 +76,6 @@ export default component$(() => {
         submit$={$((g: string) => {
           store.previousGuesses = [...store.previousGuesses, { type: "Guess", value: g }];
           store.publicKnowledge = updatePreviewMap(store.publicKnowledge, store.secretKnowledge, g);
-          if (g === store.secret) {
-            alert("You did it");
-          }
         })} />
       <button class="giveHint" onClick$={() => {
         store.previousGuesses = [...store.previousGuesses, giveHint(store.secretKnowledge, store.publicKnowledge)];
@@ -75,6 +84,11 @@ export default component$(() => {
     <Footer />
 
     <InstructionModal ref={instructionDialogRef} close$={$(() => { currentView.value = 'play' })} />
+    <CompletionModal
+      ref={completionDialogRef}
+      guessCount={store.previousGuesses.filter(g => g.type === "Guess").length}
+      hintCount={store.previousGuesses.filter(g => g.type === "Hint").length} />
+
   </div>
   );
 });
